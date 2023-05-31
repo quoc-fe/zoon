@@ -9,7 +9,7 @@ export default function ScrollTop() {
         window.scrollTo(0, 0);
       }}
     >
-      <MdOutlineKeyboardArrowUp className="text-3xl" />
+      <MdOutlineKeyboardArrowUp className="text-3xl !text-white" />
     </button>
   );
 }

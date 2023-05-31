@@ -8,7 +8,7 @@ export default function index() {
     <LayoutDocument title="Home">
       <HomeBanner />
       <HomeAbout />
-      {/* <HowTo /> */}
+      <HowTo />
     </LayoutDocument>
   );
 }

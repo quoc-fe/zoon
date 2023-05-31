@@ -4,7 +4,7 @@ import AboutImg from "../../../assets/about.jpg";
 export default function HomeAbout() {
   return (
     <div
-      className="py-[90px] max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] w-full lg:flex items-center   mx-auto px-3"
+      className="pt-[90px] max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] w-full lg:flex items-center   mx-auto px-3"
       id="about"
     >
       <div
@@ -19,7 +19,9 @@ export default function HomeAbout() {
         data-aos="fade-left"
         data-aos-easing="linear"
       >
-        <h1 className="text-[34px] font-semibold mb-[10px] ">About</h1>
+        <h1 className="text-[34px] !text-white font-semibold mb-[10px] ">
+          About
+        </h1>
         <p className="text-xl text-[#aaaaaa] mb-5 text-justify">
           Shiba HongKong is now the #1 memecoin on @pulsechain , and we're just
           getting started! 🚜 We've been growing rapidly, and our success is a
