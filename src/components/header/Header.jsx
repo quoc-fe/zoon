@@ -2,7 +2,7 @@ import { routerConstant } from "@/constants/routerConstant";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/logo.jpg";
 import { FaBars } from "react-icons/fa";
 import { useHeaderMobile } from "@/hooks/useHeaderMobile";
 export default function Header() {
@@ -29,6 +29,7 @@ export default function Header() {
             <div className="flex items-center gap-4 ">
               <Image
                 src={Logo}
+                className="rounded-full"
                 width={70}
                 height={70}
                 alt="logo"
@@ -45,11 +46,11 @@ export default function Header() {
                 About
               </li>
             </Link>
-            <Link href="#howTo">
+            {/* <Link href="#howTo">
               <li className="font-semibold text-xl text-white py-[30px] px-[18px] ">
                 How to swap
               </li>
-            </Link>
+            </Link> */}
             <li className="group">
               <button className="group-hover:hidden py-1 px-5 text-xl font-bold text-white outline-none bg-red-600 rounded bg-gradient-to-r from-[#e49945] to-blue-500">
                 Swap

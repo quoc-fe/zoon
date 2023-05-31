@@ -21,14 +21,12 @@ export default function HomeAbout() {
       >
         <h1 className="text-[34px] font-semibold mb-[10px] ">About</h1>
         <p className="text-xl text-[#aaaaaa] mb-5 text-justify">
-          HONGKHONG SHIBA will grow to be a one stop utility kit for on chain
-          activity across all EVM compatible networks. The quintessential
-          component of all 0xT protocols is they are fully autonomous, they do
-          not require or allow for human intervention.
+          Shiba HongKong is now the #1 memecoin on @pulsechain , and we're just
+          getting started! 🚜 We've been growing rapidly, and our success is a
+          testament to the power of community. So if you haven't already, come
+          join us on pulsechain and be a part of the memecoin revolution! 🚀
         </p>
-        <p className="md:text-xl text-[#aaaaaa] ">
-          Designed by crypto natives, for crypto natives.
-        </p>
+        <p className="md:text-xl text-[#aaaaaa] ">#Shiba $ShibaHK $PLS</p>
       </div>
     </div>
   );

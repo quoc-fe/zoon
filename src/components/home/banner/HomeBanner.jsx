@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Unicon from "../../../assets/unicon.svg";
+import PulseX from "../../../assets/pulseX.png";
+import Pulse from "../../../assets/pulse.png";
 import { FaTwitter, FaTelegramPlane } from "react-icons/fa";
 export default function HomeBanner() {
   return (
@@ -11,72 +12,46 @@ export default function HomeBanner() {
       <div className="relative z-[10] h-full flex items-center justify-center">
         <div className="max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] w-full  mx-auto px-3">
           <div className="flex items-center justify-between">
+            {/* để đây nếu muốn viết thêm vào bên phải */}
+            <div></div>
             <div>
-              <p className="mb-2 text-[12px] tracking-[5px]" data-aos="fade-up">
+              <p
+                className="mb-2 text-[12px] tracking-[5px] !text-white"
+                data-aos="fade-up"
+              >
                 STEP INTO THE HONGKONG SHIBA
               </p>
               <div data-aos-delay="100" data-aos="fade-up">
-                <h1 className="mb-5 font-semibold text-[32px] md:text-[50px]">
+                <h1 className="mb-5 font-semibold text-[32px] md:text-[50px] !text-white">
                   HONGKONG SHIBA
                 </h1>
-                <p className="mb-5 font-semibold text-2xl">
+                <p className="mb-5 font-semibold text-2xl !text-white">
                   Decentralized. Autonomous. Anonymous
                 </p>
               </div>
               <div
-                className="flex items-center gap-4 md:gap-10"
+                className="flex items-center"
                 data-aos-delay="300"
                 data-aos="fade-up"
               >
                 <Link
                   className="flex items-center"
-                  href="https://etherscan.io/token/0x2dbb2dba24ffc66520bde755b8ec42f9471c0472"
+                  href="https://pulsechain.com/"
                   target="_blank"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="56"
-                    height="56"
-                    viewBox="0 0 293.775 293.667"
-                    className="!text-[#fdcc39]"
-                  >
-                    <g
-                      id="etherscan-logo-light-circle"
-                      transform="translate(-219.378 -213.333)"
-                    >
-                      <path
-                        id="Path_1"
-                        data-name="Path 1"
-                        d="M280.433,353.152A12.45,12.45,0,0,1,292.941,340.7l20.737.068a12.467,12.467,0,0,1,12.467,12.467v78.414c2.336-.692,5.332-1.43,8.614-2.2a10.389,10.389,0,0,0,8.009-10.11V322.073a12.469,12.469,0,0,1,12.467-12.47h20.779a12.47,12.47,0,0,1,12.467,12.47v90.276s5.2-2.106,10.269-4.245a10.408,10.408,0,0,0,6.353-9.577V290.9a12.466,12.466,0,0,1,12.465-12.467h20.779A12.468,12.468,0,0,1,450.815,290.9v88.625c18.014-13.055,36.271-28.758,50.759-47.639a20.926,20.926,0,0,0,3.185-19.537,146.6,146.6,0,0,0-136.644-99.006c-81.439-1.094-148.744,65.385-148.736,146.834a146.371,146.371,0,0,0,19.5,73.45,18.56,18.56,0,0,0,17.707,9.173c3.931-.346,8.825-.835,14.643-1.518a10.383,10.383,0,0,0,9.209-10.306V353.152"
-                        transform="translate(0 0)"
-                        fill="#e49945"
-                      ></path>
-                      <path
-                        id="Path_2"
-                        data-name="Path 2"
-                        d="M244.417,398.641A146.808,146.808,0,0,0,477.589,279.9c0-3.381-.157-6.724-.383-10.049-53.642,80-152.686,117.405-232.79,128.793"
-                        transform="translate(35.564 80.269)"
-                        fill="#36d2cd"
-                      ></path>
-                    </g>
-                  </svg>
-                  <span>&nbsp;&nbsp;</span>
+                  <Image src={Pulse} width={100} height={100} alt="uniocon" />
                 </Link>
                 <Link
                   className="flex items-center"
-                  href="https://app.uniswap.org/#/swap?slippage=500&amp;outputCurrency=0x2dbb2dba24ffc66520bde755b8ec42f9471c0472"
+                  href="https://pulsex.com/"
                   target="_blank"
                 >
-                  <Image src={Unicon} alt="uniocon" />
+                  <Image src={PulseX} width={100} height={100} alt="uniocon" />
                 </Link>
-                <Link
-                  className="flex items-center"
-                  href="https://www.dextools.io/app/en/ether/pair-explorer/0xae48cd266c08160e3d786e26b36ffc7f8807ea09"
-                  target="_blank"
-                >
+                <Link className="flex items-center" href="#" target="_blank">
                   <svg
                     fill="none"
-                    width="48"
+                    width="100"
                     height="55.197792088316"
                     viewBox="0 -.058 754.779 867.058"
                     xmlns="http://www.w3.org/2000/svg"
@@ -88,18 +63,15 @@ export default function HomeBanner() {
                       fill-rule="evenodd"
                     ></path>
                   </svg>
-                  <span>&nbsp;&nbsp;</span>
                 </Link>
-                <Link href="https://twitter.com/0xTsunami_" target="_blank">
-                  <FaTwitter className="text-5xl text-[#49d6d2]" />
+                <Link href="https://twitter.com/PulseShibaHK" target="_blank">
+                  <FaTwitter className="text-5xl w-[100px]  text-[#49d6d2]" />
                 </Link>
-                <Link href="https://t.me/StepIntoTheTsunami" target="_blank">
-                  <FaTelegramPlane className="text-5xl text-[#49d6d2]" />
+                <Link href=" https://t.me/pulseshibahk" target="_blank">
+                  <FaTelegramPlane className="text-5xl w-[100px] text-[#49d6d2]" />
                 </Link>
               </div>
             </div>
-            {/* để đây nếu muốn viết thêm vào bên phải */}
-            <div></div>
           </div>
         </div>
       </div>

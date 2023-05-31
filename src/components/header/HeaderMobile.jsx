@@ -56,7 +56,7 @@ export default function HeaderMobile() {
               About
             </li>
 
-            <li
+            {/* <li
               className="font-semibold text-xl text-[#aaaaaa]  hover:text-white py-4 px-[18px]  cursor-pointer"
               onClick={() => {
                 router.push("#howTo");
@@ -64,7 +64,7 @@ export default function HeaderMobile() {
               }}
             >
               How to swap
-            </li>
+            </li> */}
 
             <li className="group mt-10">
               <button className="group-hover:hidden py-1 px-5 text-xl font-bold text-white outline-none bg-red-600 rounded bg-gradient-to-r from-[#e49945] to-blue-500">
