@@ -9,7 +9,7 @@ export default function HowTo() {
       id="howTo"
     >
       <div data-aos="fade-up" data-aos-easing="linear">
-        <h1 className="text-[34px] font-semibold  text-center">How to swap</h1>
+        <h1 className="text-[34px] font-semibold  text-center ">How to swap</h1>
         <ul className="text-center mb-20">
           <li className="inline-block w-[30px] h-[1px] bg-white/30 mr-3"></li>
           <li className="inline-block w-[30px] h-[1px] bg-gradient-to-r from-[#e49945] to-blue-500 mr-3"></li>

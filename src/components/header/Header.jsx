@@ -36,7 +36,7 @@ export default function Header() {
                 loading="lazy"
               />
               <h1 className="font-bold hidden md:block text-3xl text-white">
-                HONGKONG SHIBA
+                SHIBA HONGKONG
               </h1>
             </div>
           </Link>

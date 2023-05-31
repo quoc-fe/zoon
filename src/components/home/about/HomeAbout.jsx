@@ -4,7 +4,7 @@ import AboutImg from "../../../assets/about.jpg";
 export default function HomeAbout() {
   return (
     <div
-      className="pt-[90px] max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] w-full lg:flex items-center   mx-auto px-3"
+      className="py-[90px] max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] w-full lg:flex items-center   mx-auto px-3"
       id="about"
     >
       <div
