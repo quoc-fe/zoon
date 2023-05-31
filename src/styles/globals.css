@@ -16,12 +16,61 @@
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth !important;
+}
+
 body {
+  font-size: 16px;
+  font-family: CoreSan;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  /* background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
+  background-color: #171a1d;
+
+}
+
+@font-face {
+  font-family: CoreSan;
+  src: url("./fonts/Fontspring-coresansar45.otf");
+}
+
+.home-banner {
+  background-image: url("../assets/banner_dogera.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.ani-fade-down {
+  animation: fade-down 2000ms infinite ease-in-out;
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+}
+
+.header-mobile .ant-drawer-header {
+  @apply bg-black
+}
+
+.header-mobile .ant-drawer-body {
+  @apply bg-[#171a1d]
 }

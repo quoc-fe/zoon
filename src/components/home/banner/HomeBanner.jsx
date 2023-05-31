@@ -1,0 +1,113 @@
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import Unicon from "../../../assets/unicon.svg";
+import { FaTwitter, FaTelegramPlane } from "react-icons/fa";
+export default function HomeBanner() {
+  return (
+    <div className="relative home-banner max-h-screen h-screen ">
+      <div></div>
+      <div className="bottom-0 left-0 w-full absolute  h-[70%] bg-gradient-to-t from-black to-transparent "></div>
+      <div className="relative z-[10] h-full flex items-center justify-center">
+        <div className="max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] w-full  mx-auto px-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="mb-2 text-[12px] tracking-[5px]" data-aos="fade-up">
+                STEP INTO THE HONGKONG SHIBA
+              </p>
+              <div data-aos-delay="100" data-aos="fade-up">
+                <h1 className="mb-5 font-semibold text-[32px] md:text-[50px]">
+                  HONGKONG SHIBA
+                </h1>
+                <p className="mb-5 font-semibold text-2xl">
+                  Decentralized. Autonomous. Anonymous
+                </p>
+              </div>
+              <div
+                className="flex items-center gap-4 md:gap-10"
+                data-aos-delay="300"
+                data-aos="fade-up"
+              >
+                <Link
+                  className="flex items-center"
+                  href="https://etherscan.io/token/0x2dbb2dba24ffc66520bde755b8ec42f9471c0472"
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="56"
+                    height="56"
+                    viewBox="0 0 293.775 293.667"
+                    className="!text-[#fdcc39]"
+                  >
+                    <g
+                      id="etherscan-logo-light-circle"
+                      transform="translate(-219.378 -213.333)"
+                    >
+                      <path
+                        id="Path_1"
+                        data-name="Path 1"
+                        d="M280.433,353.152A12.45,12.45,0,0,1,292.941,340.7l20.737.068a12.467,12.467,0,0,1,12.467,12.467v78.414c2.336-.692,5.332-1.43,8.614-2.2a10.389,10.389,0,0,0,8.009-10.11V322.073a12.469,12.469,0,0,1,12.467-12.47h20.779a12.47,12.47,0,0,1,12.467,12.47v90.276s5.2-2.106,10.269-4.245a10.408,10.408,0,0,0,6.353-9.577V290.9a12.466,12.466,0,0,1,12.465-12.467h20.779A12.468,12.468,0,0,1,450.815,290.9v88.625c18.014-13.055,36.271-28.758,50.759-47.639a20.926,20.926,0,0,0,3.185-19.537,146.6,146.6,0,0,0-136.644-99.006c-81.439-1.094-148.744,65.385-148.736,146.834a146.371,146.371,0,0,0,19.5,73.45,18.56,18.56,0,0,0,17.707,9.173c3.931-.346,8.825-.835,14.643-1.518a10.383,10.383,0,0,0,9.209-10.306V353.152"
+                        transform="translate(0 0)"
+                        fill="#e49945"
+                      ></path>
+                      <path
+                        id="Path_2"
+                        data-name="Path 2"
+                        d="M244.417,398.641A146.808,146.808,0,0,0,477.589,279.9c0-3.381-.157-6.724-.383-10.049-53.642,80-152.686,117.405-232.79,128.793"
+                        transform="translate(35.564 80.269)"
+                        fill="#36d2cd"
+                      ></path>
+                    </g>
+                  </svg>
+                  <span>&nbsp;&nbsp;</span>
+                </Link>
+                <Link
+                  className="flex items-center"
+                  href="https://app.uniswap.org/#/swap?slippage=500&amp;outputCurrency=0x2dbb2dba24ffc66520bde755b8ec42f9471c0472"
+                  target="_blank"
+                >
+                  <Image src={Unicon} alt="uniocon" />
+                </Link>
+                <Link
+                  className="flex items-center"
+                  href="https://www.dextools.io/app/en/ether/pair-explorer/0xae48cd266c08160e3d786e26b36ffc7f8807ea09"
+                  target="_blank"
+                >
+                  <svg
+                    fill="none"
+                    width="48"
+                    height="55.197792088316"
+                    viewBox="0 -.058 754.779 867.058"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="m280.395 49.025c-51.649 26.905-93.905 49.672-93.896 50.598.023 2.39 123.959 65.156 128.358 65.003 2.001-.067 16.517-6.749 32.256-14.847l28.621-14.721 31.258 16.067 31.256 16.07 51.188-23.001c77.13-34.659 85.141-38.457 83.885-39.733-1.666-1.693-29.331-16.555-104.388-56.07-36.274-19.098-71.481-37.823-78.24-41.612-6.758-3.789-13.21-6.837-14.337-6.778s-44.311 22.12-95.961 49.024zm-226.532 117.306-53.766 27.772v121.886c0 67.038.706 121.885 1.572 121.885.863 0 27.316-11.467 58.783-25.482l57.213-25.482v-128.476l27.958 15.232a33224.294 33224.294 0 0 0 64.671 35.109l36.712 19.877 16.336-7.387a3822.03 3822.03 0 0 0 30.674-14.056c7.885-3.672 27.241-12.39 43.012-19.377 15.771-6.99 30.37-14.019 32.44-15.621 2.75-2.128-30.782-20.658-124.025-68.54-70.285-36.093-130.046-65.509-132.802-65.368s-29.206 12.752-58.778 28.028zm529.148 7.799c-36.618 16.531-66.604 30.717-66.638 31.526-.032.808 19.926 12.675 44.354 26.367 24.426 13.695 44.412 25.632 44.412 26.531 0 .897-21.615 11.37-48.03 23.278-26.419 11.905-93.194 42.061-148.393 67.014l-184.954 83.602c-46.525 21.032-88.462 39.989-93.193 42.132-95.03 43.019-121.15 54.956-124.737 57.005-3.607 2.063-4.424 14.048-5.066 74.201l-.766 71.744 48.08 24.498 48.079 24.497 66.669-30.088c36.669-16.547 66.669-30.953 66.669-32.014 0-1.058-6.776-5.473-15.054-9.815-8.282-4.342-25.378-13.954-37.995-21.364-12.616-7.411-25.196-14.21-27.958-15.112-2.761-.899-4.98-2.472-4.935-3.498.046-1.023 29.404-14.968 65.236-30.991 69.597-31.117 122.858-55.1 237.202-106.809a305577.39 305577.39 0 0 1 153.411-69.31c44.948-20.288 97.208-43.983 116.134-52.655l34.41-15.767.765-72.561.769-72.558-48.765-25.03c-26.822-13.765-49.748-24.994-50.95-24.953-1.201.038-32.141 13.595-68.756 30.13zm153.872 261.772c-7.186 3.51-21.38 10.082-31.542 14.603s-29.446 13.222-42.852 19.339l-24.374 11.117-.556 63.702c-.307 35.035-1.597 63.545-2.867 63.36-2.885-.429-48.567-23.857-94.487-48.463-33.143-17.757-35.225-18.463-43.013-14.606-4.502 2.231-31.413 14.3-59.801 26.825-28.389 12.523-52.541 23.587-53.677 24.589-1.133 1 56.002 31.967 126.97 68.819l129.029 67.003 55.119-28.513c30.312-15.68 56.088-29.983 57.275-31.782 2.672-4.045 2.443-242.93-.232-242.607-1.058.127-7.806 3.104-14.992 6.614zm-305.227 280.391a25013.26 25013.26 0 0 0 -28.675 12.349c-28.856 12.484-23.201 12.898-57.531-4.192-22.865-11.382-32.721-14.894-36.999-13.189-3.209 1.278-30.826 13.703-61.376 27.61-30.548 13.907-56.602 25.285-57.898 25.285-12.817 0 8.491 12.731 90.714 54.207l96.428 48.637 40.572-20.03c22.315-11.017 67.323-33.078 100.021-49.024 32.695-15.95 59.042-29.413 58.549-29.921-.497-.506-27.893-14.574-60.883-31.262l-59.982-30.338z"
+                      fill="#e49945"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>&nbsp;&nbsp;</span>
+                </Link>
+                <Link href="https://twitter.com/0xTsunami_" target="_blank">
+                  <FaTwitter className="text-5xl text-[#49d6d2]" />
+                </Link>
+                <Link href="https://t.me/StepIntoTheTsunami" target="_blank">
+                  <FaTelegramPlane className="text-5xl text-[#49d6d2]" />
+                </Link>
+              </div>
+            </div>
+            {/* để đây nếu muốn viết thêm vào bên phải */}
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <Link href="#about">
+        <div className="z-[10] absolute bottom-[10%] left-2/4 overflow-hidden -translate-x-2/4 w-[20px] h-[42px] border border-white/60 border-[2px] rounded-full cursor-pointer">
+          <div className="w-[3px] h-[3px] rounded-full mx-auto bg-white ani-fade-down"></div>
+        </div>
+      </Link>
+    </div>
+  );
+}
