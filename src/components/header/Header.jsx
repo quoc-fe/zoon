@@ -5,7 +5,9 @@ import React, { useEffect, useState } from "react";
 import Logo from "../../assets/logo.jpg";
 import { FaBars } from "react-icons/fa";
 import { useHeaderMobile } from "@/hooks/useHeaderMobile";
+import { useRouter } from "next/router";
 export default function Header() {
+  const router = useRouter();
   const [headerBg, setHeaderBg] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -52,12 +54,17 @@ export default function Header() {
               </li>
             </Link> */}
             <li className="group">
-              <button className="group-hover:hidden py-1 px-5 text-xl font-bold text-white outline-none bg-red-600 rounded bg-gradient-to-r from-[#e49945] to-blue-500">
+              <button
+                className=" py-1 px-5 text-xl font-bold text-white outline-none bg-red-600 rounded bg-gradient-to-r from-[#e49945] to-blue-500"
+                onClick={() => {
+                  router.push("");
+                }}
+              >
                 Swap
               </button>
-              <button className="hidden group-hover:block py-1 px-5 text-xl font-bold text-white outline-none bg-red-600 rounded bg-gradient-to-r from-[#e49945] to-blue-500">
+              {/* <button className="hidden group-hover:block py-1 px-5 text-xl font-bold text-white outline-none bg-red-600 rounded bg-gradient-to-r from-[#e49945] to-blue-500">
                 Coming Soon
-              </button>
+              </button> */}
             </li>
           </ul>
           <button

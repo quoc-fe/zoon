@@ -67,12 +67,12 @@ export default function HeaderMobile() {
             </li> */}
 
             <li className="group mt-10">
-              <button className="group-hover:hidden py-1 px-5 text-xl font-bold text-white outline-none bg-red-600 rounded bg-gradient-to-r from-[#e49945] to-blue-500">
+              <button className=" py-1 px-5 text-xl font-bold text-white outline-none bg-red-600 rounded bg-gradient-to-r from-[#e49945] to-blue-500">
                 Swap
               </button>
-              <button className="hidden group-hover:block py-1 px-5 text-xl font-bold text-white outline-none bg-red-600 rounded bg-gradient-to-r from-[#e49945] to-blue-500">
+              {/* <button className="hidden group-hover:block py-1 px-5 text-xl font-bold text-white outline-none bg-red-600 rounded bg-gradient-to-r from-[#e49945] to-blue-500">
                 Coming Soon
-              </button>
+              </button> */}
             </li>
           </ul>
         </div>

