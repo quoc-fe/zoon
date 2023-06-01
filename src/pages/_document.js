@@ -8,7 +8,6 @@ export default function Document() {
         <link rel="shortcut icon" href="favicon.png" />
       </Head>
       <body>
-
         <Main />
         <NextScript />
       </body>

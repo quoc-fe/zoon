@@ -19,14 +19,14 @@ export default function HomeBanner() {
                 className="mb-2 text-[12px] tracking-[5px] !text-white"
                 data-aos="fade-up"
               >
-                STEP INTO THE SHIBA HONGKONG
+                Welcome to the new storm on pulse chain
               </p>
               <div data-aos-delay="100" data-aos="fade-up">
                 <h1 className="mb-5 font-semibold text-[32px] md:text-[50px] !text-white">
                   SHIBA HONGKONG
                 </h1>
                 <p className="mb-5 font-semibold text-2xl !text-white">
-                  Decentralized. Autonomous. Anonymous
+                  Degen , Meme , For Community
                 </p>
               </div>
               <div
