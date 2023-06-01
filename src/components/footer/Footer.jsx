@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
 export default function Footer() {
+  const router = useRouter();
   return (
     <footer className=" bg-black/10 border-t border-white/10">
       <div className="max-w-[1140px] w-full flex items-center justify-center gap-3  mx-auto px-3 py-5">
