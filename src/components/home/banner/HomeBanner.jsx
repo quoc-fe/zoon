@@ -47,11 +47,11 @@ export default function HomeBanner() {
               Contract code fully audited by Solidity Finance and shown to be
               100% secure.
             </p>
-            <p className="my-[16px] 2xl:my-[18px] text-base 2xl:text-[20px] text-center w-[640px] 2xl:w-[480px] mx-auto">
+            <p className="my-[16px] 2xl:my-[20px] text-base 2xl:text-[20px] text-center w-[640px] 2xl:w-[480px] mx-auto">
               You can buy direct using USDT, ETH or BNB. After the public sale
               ends, you'll claim your purchased Big Eyes using the claim page.
             </p>
-            <div className="mt-[2rem] flex items-center justify-center gap-3">
+            <div className="mt-[42px] flex items-center justify-center gap-3">
               <button
                 className="bg-[#f38590] text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full w-[11rem] py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
                 onClick={() => {
