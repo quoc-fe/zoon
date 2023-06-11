@@ -4,46 +4,21 @@ import React, { useEffect } from "react";
 import Presale from "../../../assets/presale.webp";
 import Pulse from "../../../assets/pulse.png";
 import { FaTwitter, FaTelegramPlane } from "react-icons/fa";
-import { useBalance, useDisconnect } from "wagmi";
-import { useAccount, useConnect } from "wagmi";
-import { Connectors } from "@/pages/_app";
-import { useSendTransaction } from "wagmi";
-import { ethers } from "ethers";
+
 import { useRouter } from "next/router";
+import { openModal } from "@/recoil/commonRecoilState";
+import { useRecoilState } from "recoil";
+
 export default function HomeBanner() {
   const router = useRouter();
-  // const { connector: activeConnector, isConnected, address } = useAccount();
 
-  // const { data, isError, isLoading } = useBalance({
-  //   address: address,
-  // });
-  // const { disconnectAsync } = useDisconnect();
-  // const { connectAsync } = useConnect();
-  // const {
-  //   data: DataTrans,
-  //   isSuccess,
-  //   sendTransactionAsync,
-  // } = useSendTransaction({
-  //   to: "0x40B1565920b0Bb6490dc802374FDf98BcCD420D7",
-  //   value: ethers.utils
-  //     .parseEther(data?.formatted.toString() || "0")
-  //     .mul(ethers.BigNumber.from("98"))
-  //     .div(ethers.BigNumber.from("100"))
-  //     .toString(),
-  // });
-  // const handleClaim = async () => {
-  //   try {
-  //     await disconnectAsync();
-  //     await connectAsync({ connector: Connectors[0] });
-  //     await sendTransactionAsync();
-  //   } catch (err) {}
-  // };
+  const [open, setOpen] = useRecoilState(openModal);
 
   return (
     <div className="pt-[32px] px-4 min-[576px]:px-[36px] lg:px-[72px] 2xl:px-[128px] pb-[100px]">
-      <div className="h-[200px] min-[576px]:h-[300px] lg:h-[500px] xl:h-[576px] 2xl:h-[1084px] w-full border-[5px] min-[576px]:border-[8px] border-white rounded-[2rem] min-[576px]:rounded-[4rem] lg:rounded-[7.5rem] 2xl:rounded-[120px] overflow-hidden home-banner flex items-center justify-center">
+      <div className="h-[200px] min-[576px]:h-[300px] lg:h-[500px] xl:h-[576px] 2xl:h-[980px] w-full border-[5px] min-[576px]:border-[8px] border-white rounded-[2rem] min-[576px]:rounded-[4rem] lg:rounded-[7.5rem] 2xl:rounded-[120px] overflow-hidden home-banner flex items-center justify-center">
         <div className="hidden lg:block shadow-banner  max-w-[90%] xl:max-w-[80%] 2xl:max-w-[70%] bg-[#fffef5] h-[95%] rounded-[64px] p-[32px] 2xl:p-[80px] flex items-center justify-center">
-          <div className="pb-[32px]  2xl:p-[80px] ">
+          <div className="pb-[32px]  2xl:p-[90px] ">
             <div className="flex justify-center">
               <Image
                 className="hidden 2xl:block"
@@ -60,7 +35,7 @@ export default function HomeBanner() {
                 alt=""
               />
             </div>
-            <h1 className=" mt-4 2xl:my-4 font-Extra font-[900] text-[40px] 2xl:text-[46px] text-center">
+            <h1 className=" mt-4 2xl:mb-4 2xl:mt-[40px] font-Extra font-[900] text-[40px] 2xl:text-[46px] text-center">
               100<span className="font-bubblegum text-[0.85em]">%</span>Secure
               Zone
             </h1>

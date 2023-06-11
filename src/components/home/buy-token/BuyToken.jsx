@@ -46,7 +46,12 @@ export default function BuyToken() {
                   <p className="text-[#f38590] text-base sm:text-[1.5rem] font-bold text-center sm:mt-4">
                     You have 0 Big Eyes tokens.
                   </p>
-                  <div className="text-[#11a6d5] font-semibold cursor-pointer mb-2">
+                  <div
+                    className="text-[#11a6d5] font-semibold cursor-pointer mb-2"
+                    onClick={() => {
+                      router.push("#calculator");
+                    }}
+                  >
                     View your potential returns
                   </div>
                   <div class="connected-text mb-4">
@@ -85,7 +90,7 @@ export default function BuyToken() {
           <div className="hidden lg:block border-r-[0.15rem] border-black w-[0.15rem] h-full absolute left-2/4 -translate-x-2/4"></div>
           <div className="max-h-[40rem] h-full  w-2/4 flex items-center justify-center p-[32px]">
             <div>
-              <div className="w-[300px] sm:w-[300px] md:w-[370px] xl:w-[480px] 2xl:w-[761px] h-[250px] sm:h-[320px] mx-auto 2xl:h-[352px] flex justify-center relative">
+              <div className="w-[300px] sm:w-[300px] md:w-[370px] xl:w-[480px] min-w-[1800px]:w-[761px] 2xl:w-[600px] h-[250px] sm:h-[320px] mx-auto 2xl:h-[352px] flex justify-center relative">
                 <div className="relative">
                   <Image
                     src={
@@ -126,8 +131,11 @@ export default function BuyToken() {
                   PRESALE ENDED
                 </p>
                 <div className="buy-token-multiDot h-[4rem] border-[4px] border-[#757473]  rounded-[1.5rem] bg-[#a3e6fb] w-full p-[0.5rem]">
-                  <div className="w-full hidden 2xl:flex overflow-hidden rounded-[1rem] border-[3px] border-[#6c6b6b] h-full bg-[#fffdf5]  py-[0.2rem] px-[0.5rem] gap-1 justify-center">
+                  <div className="w-full hidden min-w-[1800px]:flex overflow-hidden rounded-[1rem] border-[3px] border-[#6c6b6b] h-full bg-[#fffdf5]  py-[0.2rem] px-[0.5rem] gap-1 justify-center">
                     {renderDot(24)}
+                  </div>
+                  <div className="w-full hidden hidden 2xl:flex  min-w-[1800px]:hidden overflow-hidden rounded-[1rem] border-[3px] border-[#6c6b6b] h-full bg-[#fffdf5]  py-[0.2rem] px-[0.5rem] gap-1 justify-center">
+                    {renderDot(19)}
                   </div>
                   <div className="w-full hidden xl:flex 2xl:hidden overflow-hidden rounded-[1rem] border-[3px] border-[#6c6b6b] h-full bg-[#fffdf5]  py-[0.2rem] px-[0.5rem] gap-1 justify-center">
                     {renderDot(16)}

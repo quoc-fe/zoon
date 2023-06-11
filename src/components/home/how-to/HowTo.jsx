@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { RiContactsBookLine } from "react-icons/ri";
-import { FcFlowChart } from "react-icons/fc";
+import Copy from "../../../assets/copy.svg";
 import codeCountry from "../../../constants/codeCountry.json";
 import { IoCopyOutline } from "react-icons/io5";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
@@ -336,14 +336,14 @@ export default function HowTo() {
                     />
                   </div>
                   <button
-                    className="flex items-center justify-center bg-[#F9C7CC] min-w-[7rem] md:min-w-[10rem] text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#f38590] hover:text-black transition-all duration-300"
+                    className="flex items-center gap-2 justify-center bg-[#F9C7CC] min-w-[7rem] md:min-w-[10rem] text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#f38590]  transition-all duration-300"
                     onClick={() => {
                       navigator.clipboard.writeText(
                         "0xc8De43Bfe33FF496Fa14c270D9CB29Bda196B9B5"
                       );
                     }}
                   >
-                    Copy <IoCopyOutline />
+                    Copy <Image src={Copy} width={19} height={21} alt="" />
                   </button>
                 </div>
                 <div className="flex items-center  flex-col md:flex-row gap-[24px]">
@@ -359,12 +359,12 @@ export default function HowTo() {
                       />
                     </div>
                     <button
-                      className="flex items-center justify-center bg-[#F9C7CC] min-w-[7rem] md:min-w-[10rem] text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#f38590] hover:text-black transition-all duration-300"
+                      className="flex items-center gap-2 justify-center bg-[#F9C7CC] min-w-[7rem] md:min-w-[10rem] text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#f38590]  transition-all duration-300"
                       onClick={() => {
                         navigator.clipboard.writeText("18");
                       }}
                     >
-                      Copy <IoCopyOutline />
+                      Copy <Image src={Copy} width={19} height={21} alt="" />
                     </button>
                   </div>
                   <div className="flex w-full  items-center gap-3">
@@ -379,12 +379,12 @@ export default function HowTo() {
                       />
                     </div>
                     <button
-                      className="flex items-center justify-center bg-[#F9C7CC] min-w-[7rem] md:min-w-[10rem] text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#f38590] hover:text-black transition-all duration-300"
+                      className="flex items-center gap-2 justify-center bg-[#F9C7CC] min-w-[7rem] md:min-w-[10rem] text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#f38590]  transition-all duration-300"
                       onClick={() => {
                         navigator.clipboard.writeText("BIG");
                       }}
                     >
-                      Copy <IoCopyOutline />
+                      Copy <Image src={Copy} width={19} height={21} alt="" />
                     </button>
                   </div>
                 </div>
@@ -621,6 +621,30 @@ export default function HowTo() {
                       Submit
                     </button>
                   </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <input
+                    type={"checkbox"}
+                    className="accent-[#f38691] checked:text-black"
+                  />
+                  <p className=" text-[#999]">
+                    By submitting this form you agree to our{" "}
+                    <a
+                      href="https://bigeyes.space/terms"
+                      className="text-black"
+                      target="_blank"
+                    >
+                      Terms
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="https://bigeyes.space/privacy-policy"
+                      className="text-black"
+                      target="_blank"
+                    >
+                      Privacy Policy
+                    </a>
+                  </p>
                 </div>
               </form>
             </div>

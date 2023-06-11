@@ -52,7 +52,10 @@ export default function Calculator() {
     await disconnectAsync();
   };
   return (
-    <div className="p-4 sm:px-[48px] md:px-[72px] xl:px-[104px] py-[128px] bg-[rgb(221,209,228)]">
+    <div
+      className="p-4 sm:px-[48px] md:px-[72px] xl:px-[104px] py-[128px] bg-[rgb(221,209,228)]"
+      id="calculator"
+    >
       <div className=" h-auto border-[0.1875rem] border-[#5b5b5b] rounded-[4rem] 2xl:rounded-[6.25rem]  overflow-hidden bg-[#fffef5] shadow-card">
         <div className="max-w-[70rem] w-full p-4 sm:p-[3rem] md:p-[5rem] mx-auto">
           <div className="relative">
