@@ -15,7 +15,7 @@ export default function HomeBanner() {
   const [open, setOpen] = useRecoilState(openModal);
 
   return (
-    <div className="pt-[32px] px-4 min-[576px]:px-[36px] lg:px-[72px] 2xl:px-[128px] pb-[100px]">
+    <div className="pt-[32px] px-4 min-[576px]:px-[36px] lg:px-[72px] 2xl:px-[104px] pb-[100px]">
       <div className="h-[200px] min-[576px]:h-[300px] lg:h-[500px] xl:h-[576px] 2xl:h-[980px] w-full border-[5px] min-[576px]:border-[8px] border-white rounded-[2rem] min-[576px]:rounded-[4rem] lg:rounded-[7.5rem] 2xl:rounded-[120px] overflow-hidden home-banner flex items-center justify-center">
         <div className="hidden lg:block shadow-banner  max-w-[90%] xl:max-w-[80%] 2xl:max-w-[70%] bg-[#fffef5] h-[95%] rounded-[64px] p-[32px] 2xl:p-[80px] flex items-center justify-center">
           <div className="pb-[32px]  2xl:p-[90px] ">

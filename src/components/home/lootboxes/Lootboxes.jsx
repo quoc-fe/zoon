@@ -65,14 +65,14 @@ export default function Lootboxes() {
         <div className="py-[2rem] 2xl:py-[96px] px-[2rem] 2xl:px-[150px]">
           <div className="max-w-[80rem] w-full flex flex-col-reverse min-[1028px]:flex-row items-center ">
             <div className="xl:mr-[2rem]">
-              <h1 className="my-4 text-[2.5rem] leading-[1.025em] sm:leading-none min-w-[1440px]:text-[2.875rem] 2xl:text-[3.125rem] max-w-[17rem] md:max-w-[36rem] min-[1028px]:max-w-[28rem] min-w-[1440px]:max-w-[35rem] font-Extra text-center ">
+              <h1 className="my-4 text-[2.5rem] leading-[1.025em] sm:leading-none min-[1440px]:text-[2.875rem] 2xl:text-[3.125rem] max-w-[17rem] md:max-w-[36rem] min-[1028px]:max-w-[28rem] min-[1440px]:max-w-[35rem] font-Extra text-center ">
                 Open lootboxes to win $BIG!
               </h1>
-              <h2 className="my-[20px] font-bold text-[#f48d97]  max-w-[17rem] md:max-w-[36rem] min-[1028px]:max-w-[28rem] min-w-[1440px]:max-w-[35rem] mx-auto text-center text-[24px]">
+              <h2 className="my-[20px] font-bold text-[#f48d97]  max-w-[17rem] md:max-w-[36rem] min-[1028px]:max-w-[28rem] min-[1440px]:max-w-[33rem] mx-auto text-center text-[24px]">
                 Enter our presale in a fun way! Open lootboxes to get a random
                 amount of $BIG tokens!
               </h2>
-              <div className="mt-4 flex flex-col sm:flex-row justify-center items-center gap-3 max-w-[17rem] md:max-w-[36rem] min-[1028px]:max-w-[28rem] min-w-[1440px]:max-w-[35rem]">
+              <div className="mt-4 flex flex-col sm:flex-row justify-center items-center gap-3 max-w-[17rem] md:max-w-[36rem] min-[1028px]:max-w-[28rem] min-[1440px]:max-w-[35rem]">
                 <button
                   className="bg-[#f38590] max-w-[16rem] w-full whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
                   onClick={handleClaim}

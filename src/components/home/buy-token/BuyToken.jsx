@@ -29,14 +29,14 @@ export default function BuyToken() {
       className="p-4 sm:px-[48px] md:px-[72px] xl:px-[104px] py-[128px] bg-[rgb(255,220,170)]"
       id="buyToken"
     >
-      <div className="min-h-[43rem] h-auto lg:h-[637px] 2xl:h-[1148px] border-[0.1875rem] border-[#5b5b5b] rounded-[4rem] 2xl:rounded-[6.25rem] overflow-hidden bg-[#fffef5] shadow-card">
+      <div className="min-h-[43rem] h-auto lg:h-[637px] 2xl:h-[1000px] border-[0.1875rem] border-[#5b5b5b] rounded-[4rem] 2xl:rounded-[6.25rem] overflow-hidden bg-[#fffef5] shadow-card">
         <div className="bg-[#a6e8fe] border-b-[0.1875rem] border-[#000] flex items-center gap-3 pl-[4.5rem] py-4">
           <div className="w-[1.5rem] h-[1.5rem] rounded-full bg-[#eb6e6e] border-[0.125rem] border-[#000]"></div>
           <div className="w-[1.5rem] h-[1.5rem] rounded-full bg-[#ffdea9] border-[0.125rem] border-[#000]"></div>
           <div className="w-[1.5rem] h-[1.5rem] rounded-full bg-[#cce79e] border-[0.125rem] border-[#000]"></div>
         </div>
         <div className="h-full w-full flex flex-col lg:flex-row items-center relative ">
-          <div className=" flex items-start 2xl:items-center justify-center max-h-[40rem] h-full w-full lg:w-2/4 p-[32px]">
+          <div className=" flex items-center justify-center max-h-[40rem] h-full w-full lg:w-2/4 p-[32px]">
             <div className=" relative py-4 sm:py-8 px-8 border-[.1875rem] border-[#c4c4c4] max-w-[27rem] w-full rounded-[2.1875rem] text-center">
               <p className="text-[#f38590] text-[1.5rem] font-bold text-center my-4">
                 PRESALE ENDED
@@ -150,6 +150,13 @@ export default function BuyToken() {
               </div>
             </div>
           </div>
+          <Image
+            src="https://buy1.bigeyes.space/img/stars/stars.webp"
+            className="absolute top-8 left-[3%]"
+            width={52}
+            height={67}
+            alt=""
+          />
         </div>
       </div>
     </div>
