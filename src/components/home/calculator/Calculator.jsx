@@ -68,7 +68,7 @@ export default function Calculator() {
               </p>
               {!address && (
                 <button
-                  className="bg-[#f38590] text-white border-[5px] text-[0.95rem]  hover:font-semibold border-[#F9C7CC] rounded-full w-[8.5rem] h-[1.75rem] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
+                  className="bg-[#f38590] flex items-center  justify-center text-white border-[5px] text-[0.95rem]  hover:font-semibold border-[#F9C7CC] rounded-full w-[8.5rem] h-[1.75rem] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
                   onClick={() => {
                     setOpen({ open: true, component: <ConnectWallet /> });
                   }}
@@ -412,7 +412,7 @@ export default function Calculator() {
                 Buy Big Eyes
               </button>
               <button
-                className="bg-[#f38590] max-w-[10rem] w-full whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[4px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
+                className="bg-[#f38590] max-w-[10rem] flex items-center justify-center w-full whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[4px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
                 onClick={() => {}}
               >
                 Share Returns

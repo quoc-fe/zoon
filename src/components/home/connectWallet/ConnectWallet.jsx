@@ -7,13 +7,19 @@ import { useAccount, useConnect, useDisconnect } from "wagmi";
 export default function ConnectWallet() {
   const { connector: activeConnector, isConnected, address } = useAccount();
   const { disconnectAsync } = useDisconnect();
-  const { connectAsync } = useConnect();
+  const { connectAsync, error } = useConnect();
 
   const [open, setOpen] = useRecoilState(openModal);
   const handleConnect = async (connector) => {
     try {
       await connectAsync({ connector });
-    } catch (err) {}
+    } catch (err) {
+      if (err.message === "Connector not found") {
+        const location2 = location.href;
+        location2.replace(/https:\/\//g, "");
+        window.open("https://metamask.app.link/dapp/" + location2, "_blank");
+      }
+    }
   };
   return (
     <div className="min-w-[320px] bg-white shadow-wallet border border-[rgb(231,227,235)] rounded-[32px] overflow-hidden">
