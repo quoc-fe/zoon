@@ -1,32 +1,16 @@
 import "antd/dist/reset.css";
 import "../styles/globals.css";
 import { RecoilRoot } from "recoil";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { WagmiConfig, createConfig, configureChains } from "wagmi";
-import { pulsechain, bsc, arbitrum, mainnet } from "wagmi/chains";
-import { InjectedConnector } from "wagmi/connectors/injected";
-import { publicProvider } from "wagmi/providers/public";
 
-import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import { useRouter } from "next/router";
+import { Connectors, publicClient } from "@/utils/connector";
 
 // API key for Ethereum node
 // Two popular services are Infura (infura.io) and Alchemy (alchemy.com)
-
-const defaultChains = [mainnet, pulsechain, bsc, arbitrum];
-// Configure chains for connectors to support
-
-export const { chains, publicClient } = configureChains(defaultChains, [
-  publicProvider(),
-]);
-
-// Set up connectors
-export const Connectors = [
-  new MetaMaskConnector({
-    chains,
-  }),
-];
 
 const config = createConfig({
   autoConnect: false,
@@ -34,14 +18,38 @@ const config = createConfig({
   publicClient: publicClient,
 });
 export default function App({ Component, pageProps }) {
+  // useEffect(() => {
+  //   Aos.init({ once: true, easing: "linear" });
+  // });
+  const router = useRouter();
   useEffect(() => {
-    Aos.init({ once: true, easing: "linear" });
-  });
+    var addScript = document.createElement("script");
+    addScript.setAttribute(
+      "src",
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    );
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
+  }, [router]);
+  const googleTranslateElementInit = () => {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: "cs",
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        includedLanguages:
+          "ar,zh-CN,cs,en,et,tl,fr,de,el,iw,hi,id,it,ja,ko,fa,pt,ro,ru,es,tr,ur,vi", // include this for selected languages
+      },
+      "google_translate_element"
+    );
+  };
+
   return (
-    <WagmiConfig config={config}>
-      <RecoilRoot>
-        <Component {...pageProps} />
-      </RecoilRoot>
-    </WagmiConfig>
+    <React.StrictMode>
+      <WagmiConfig config={config}>
+        <RecoilRoot>
+          <Component {...pageProps} />
+        </RecoilRoot>
+      </WagmiConfig>
+    </React.StrictMode>
   );
 }

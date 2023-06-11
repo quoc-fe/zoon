@@ -1,22 +1,98 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Logo from "../../assets/logo-desktop-header.svg";
 import React from "react";
 import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
 export default function Footer() {
   const router = useRouter();
   return (
-    <footer className=" bg-black/10 border-t border-white/10">
-      <div className="max-w-[1140px] w-full flex items-center justify-center gap-3  mx-auto px-3 py-5">
-        <Link href={"https://t.me/pulseshibahk"} target="_blank">
-          <div className="group hover:bg-white w-[30px] h-[30px] flex items-center justify-center rounded-full transition-all duration-300">
-            <FaTelegramPlane className=" group-hover:!text-[#171A1D] !text-white text-2xl transition-all duration-300" />
+    <footer className="bg-[#fffef5]">
+      <div className="max-w-[82.5rem] flex flex-col gap-3 md:flex-row items-start md:items-center  py-[6rem] px-4 md:px-[4rem] mx-auto">
+        <div
+          className="w-[17.5rem] mr-[8rem]"
+          onClick={() => {
+            router.push("https://bigeyes.space/");
+          }}
+        >
+          <Image src={Logo} alt="" />
+        </div>
+        <div className=" md:ml-[8rem] flex flex-col md:flex-row items-start gap-10">
+          <div>
+            <p className="text-[1.3125rem] text-black font-bold">About us</p>
+            <p>
+              <a className="text-[#999]" href="https://bigeyes.space/?page=2">
+                Tokenomics
+              </a>
+            </p>
+            <p>
+              <a className="text-[#999]" href="https://bigeyes.space/?page=3">
+                Roadmap
+              </a>
+            </p>
+            <p>
+              <a className="text-[#999]" href="https://bigeyes.space/?page=4">
+                Charity
+              </a>
+            </p>
           </div>
-        </Link>
-        <Link href={"https://twitter.com/PulseShibaHK"} target="_blank">
-          <div className="group hover:bg-white w-[30px] h-[30px] flex items-center justify-center rounded-full transition-all duration-300">
-            <FaTwitter className=" group-hover:!text-[#171A1D] !text-white text-2xl transition-all duration-300" />
+          <div className="text-[#999]">
+            <p className="text-[1.3125rem] text-black font-bold">Documents</p>
+            <p>
+              <a
+                href="https://buy.bigeyes.space/documents/Whitepaper.pdf"
+                download="whitepaper.pdf"
+              >
+                Whitepaper
+              </a>
+            </p>
+            <p>
+              <a
+                href="https://solidity.finance/audits/BigEyes/"
+                target="_blank"
+              >
+                Audit
+              </a>
+            </p>
           </div>
-        </Link>
+          <div className="text-[#999]">
+            <p className="text-[1.3125rem] text-black font-bold">Coming Soon</p>
+            <p>
+              <a>NFT</a>
+            </p>
+            <p>
+              <a target="_blank">Influencers</a>
+            </p>
+          </div>
+          <div className="text-[#999]">
+            <p className="text-[1.3125rem] text-black font-bold">Social</p>
+            <p>
+              <a href="https://www.instagram.com/BigEyesCoin" target="_blank">
+                Instagram
+              </a>
+            </p>
+            <p>
+              <a href="https://twitter.com/BigEyesCoin" target="_blank">
+                Twitter
+              </a>
+            </p>
+            <p>
+              <a href="https://t.me/BIGEYESOFFICIAL" target="_blank">
+                Telegram
+              </a>
+            </p>
+            <p>
+              <a href="https://linktr.ee/bigeyescoin" target="_blank">
+                Linktree
+              </a>
+            </p>
+            <p>
+              <a href="https://discord.gg/4jyTjhgYJN" target="_blank">
+                Discord
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );
