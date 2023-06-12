@@ -80,7 +80,8 @@ export default function HomeBanner() {
               <button
                 className="bg-[#F9C7CC] whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#f38590] hover:text-black transition-all duration-300"
                 onClick={() => {
-                  router.push("#howto");
+                  const element = document.getElementById("Lootboxes");
+                  element.scrollIntoView();
                 }}
               >
                 How to Buy
