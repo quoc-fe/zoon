@@ -86,6 +86,15 @@ export default function HowTo() {
     );
   };
   const router = useRouter();
+  const { section } = router.query;
+  const checkSection = () => {
+    if (section) {
+      if (section === "claim") {
+        return true;
+      }
+      return false;
+    }
+  };
   return (
     <div
       className="p-4 sm:px-[48px] md:px-[72px] xl:px-[104px] py-[128px] bg-[rgb(214,244,251)]"
@@ -297,7 +306,8 @@ export default function HowTo() {
               <button
                 className="mt-[64px] bg-[#f38590] min-w-[10rem] w-[16.875rem] whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[4px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
                 onClick={() => {
-                  router.push("#buyToken");
+                  const element = document.getElementById("claim");
+                  element.scrollIntoView();
                 }}
               >
                 Buy now

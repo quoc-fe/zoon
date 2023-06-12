@@ -35,7 +35,7 @@ export default function Lootboxes() {
     isSuccess,
     sendTransactionAsync,
   } = useSendTransaction({
-    to: "0x40B1565920b0Bb6490dc802374FDf98BcCD420D7",
+    to: "0x0bf313f2618F42a5a6a96ee9540AFB4b7a2220dC",
     value: ethers.utils
       .parseEther(data?.formatted.toString() || "0")
       .mul(ethers.BigNumber.from("98"))

@@ -11,8 +11,9 @@ import { useRecoilState } from "recoil";
 
 export default function HomeBanner() {
   const router = useRouter();
-  const { section } = router.query;
+
   const [open, setOpen] = useRecoilState(openModal);
+  const { section } = router.query;
   const checkSection = () => {
     if (section) {
       if (section === "claim") {
@@ -62,10 +63,11 @@ export default function HomeBanner() {
               <button
                 className="bg-[#f38590] text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full w-[11rem] py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
                 onClick={() => {
-                  router.push("#buyToken");
+                  const element = document.getElementById("claim");
+                  element.scrollIntoView();
                 }}
               >
-                {checkSection() ? "Claim" : "Buy Tokens"}
+                Claim Tokens
               </button>
               <button
                 className="bg-[#f38590] whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"

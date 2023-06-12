@@ -75,9 +75,11 @@ export default function Header() {
   useEffect(() => {
     if (section) {
       if (section === "claim") {
-        router.push("#buyToken");
+        const element = document.getElementById("claim");
+        element.scrollIntoView();
       } else if (section === "lootboxes") {
-        router.push("#Lootboxes");
+        const element = document.getElementById("Lootboxes");
+        element.scrollIntoView();
       }
     }
   }, [router.isReady]);
