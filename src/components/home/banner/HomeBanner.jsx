@@ -61,7 +61,7 @@ export default function HomeBanner() {
             </p>
             <div className="mt-[42px] flex items-center justify-center gap-3">
               <button
-                className="bg-[#f38590] text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full w-[11rem] py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
+                className="bg-[#f38590] whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full w-[11rem] py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
                 onClick={() => {
                   const element = document.getElementById("claim");
                   element.scrollIntoView();
