@@ -1,11 +1,27 @@
-import { pulsechain, bsc, arbitrum, mainnet } from "wagmi/chains";
+import {
+  pulsechain,
+  bsc,
+  arbitrum,
+  mainnet,
+  bscTestnet,
+  polygon,
+  goerli,
+} from "wagmi/chains";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import { publicProvider } from "wagmi/providers/public";
 
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectLegacyConnector } from "wagmi/connectors/walletConnectLegacy";
 import { configureChains } from "wagmi";
-export const defaultChains = [mainnet, pulsechain, bsc, arbitrum];
+export const defaultChains = [
+  mainnet,
+  pulsechain,
+  bsc,
+  arbitrum,
+  bscTestnet,
+  polygon,
+  goerli,
+];
 // Configure chains for connectors to support
 
 export const { chains, publicClient } = configureChains(defaultChains, [

@@ -5,7 +5,8 @@ import React, { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { WagmiConfig, createConfig, configureChains } from "wagmi";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from "next/router";
 import { Connectors, publicClient } from "@/utils/connector";
 

@@ -50,6 +50,7 @@ export default function Header() {
   const router = useRouter();
   const [lang, SetLang] = useState("English");
   const { openHeader, setOpenHeader } = useHeaderMobile();
+  const { section } = router.query;
   const [dropDown, setDropdown] = useState(false);
   const [open, setOpen] = useRecoilState(openModal);
   const renderLang = useCallback(() => {
@@ -71,6 +72,15 @@ export default function Header() {
       );
     });
   }, []);
+  useEffect(() => {
+    if (section) {
+      if (section === "claim") {
+        router.push("#buyToken");
+      } else if (section === "lootboxes") {
+        router.push("#Lootboxes");
+      }
+    }
+  }, [router.isReady]);
   return (
     <header className={` w-full  bg-transparent `}>
       <div className="py-[24px] px-[40px]">

