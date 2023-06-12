@@ -3,11 +3,12 @@ import { Connectors } from "@/utils/connector";
 import React, { useEffect } from "react";
 import { MdClose } from "react-icons/md";
 import { useRecoilState } from "recoil";
-import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { useAccount, useConnect, useDisconnect, useNetwork } from "wagmi";
 export default function ConnectWallet() {
   const { connector: activeConnector, isConnected, address } = useAccount();
   const { disconnectAsync } = useDisconnect();
   const { connectAsync, error } = useConnect();
+  const { chain } = useNetwork();
 
   const [open, setOpen] = useRecoilState(openModal);
   const handleConnect = async (connector) => {
