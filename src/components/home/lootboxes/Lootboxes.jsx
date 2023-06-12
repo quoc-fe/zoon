@@ -21,7 +21,7 @@ import {
 
 export default function Lootboxes() {
   const router = useRouter();
-  const [openBuy, setOpenBuy] = useState(true);
+  const [openBuy, setOpenBuy] = useState(false);
   const [click, setClick] = useState(false);
   const [open, setOpen] = useRecoilState(openModal);
   const { connector: activeConnector, isConnected, address } = useAccount();
