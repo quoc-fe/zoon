@@ -78,6 +78,30 @@ export default function Lootboxes() {
     slidesToScroll: 1.5,
     nextArrow: <MdOutlineKeyboardArrowRight />,
     prevArrow: <MdOutlineKeyboardArrowLeft />,
+    responsive: [
+      {
+        breakpoint: 1028,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1.5,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1.3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   const renderItem = () => {
     const arr = [
@@ -86,35 +110,40 @@ export default function Lootboxes() {
         img: "https://buy1.bigeyes.space/img/lootbox-saver-tin/lootbox-saver-tin.webp",
         price: "$9.99",
         maxPrice: " $500",
+        amount: 10,
       },
       {
         name: "Cute Box",
         img: "https://buy1.bigeyes.space/img/lootbox-cute-box/lootbox-cute-box.webp",
         price: "$99",
         maxPrice: " $5k",
+        amount: 5,
       },
       {
         name: "Kitty Vault",
         img: "https://buy1.bigeyes.space/img/lootbox-kitty-vault/lootbox-kitty-vault.webp",
         price: "$499",
         maxPrice: " $25k",
+        amount: 3,
       },
       {
         name: "Super Saiyan Box",
         img: "https://buy1.bigeyes.space/img/lootbox-super-saiyan-box/lootbox-super-saiyan-box.webp",
         price: "$999",
         maxPrice: " $100k",
+        amount: 1,
       },
       {
         name: "Excali-Paw Chest",
         img: "https://buy1.bigeyes.space/img/lootbox-excali-paw-chest/lootbox-excali-paw-chest.webp",
         price: "$9.999",
         maxPrice: " $100M",
+        amount: 1,
       },
     ];
     return arr.map((item, index) => {
       return (
-        <div key={index} className="min-w-[18rem] p-[24px] ">
+        <div key={index} className="min-w-[18rem] pr-4 md:p-[24px] ">
           <div className="border-[3px] border-[#c4c4c4] rounded-[2rem] pt-[1rem] pb-[.5rem] text-center overflow-hidden">
             <h1 className="font-Extra font-[900] text-[1.5rem] text-center leading-[1.032em]">
               {item.name}
@@ -150,7 +179,7 @@ export default function Lootboxes() {
             <div className="border-b-[3px] border-[#c4c4c4] py-[0.5rem] ">
               Max Prize: {item.maxPrice}
             </div>
-            <div className="px-4 pt-4 pb-3">
+            <div className="px-2 sm:px-4 pt-4 pb-3">
               {!address && (
                 <button
                   className="w-full bg-[#f38590] text-white border-[5px] text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[.375rem] px-[1.5rem] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
@@ -163,7 +192,7 @@ export default function Lootboxes() {
               )}
               {address && (
                 <p className="text-[#f38590] text-[1.2rem] font-bold">
-                  You own 1
+                  You own {item.amount}
                 </p>
               )}
               <button
@@ -174,6 +203,7 @@ export default function Lootboxes() {
                     : "w-full bg-[#ccc]"
                 }  text-white border-[5px] text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[.375rem] px-[.75rem] font-semibold  transition-all duration-300`}
                 onClick={() => {
+                  setClick(true);
                   handleClaim();
                 }}
               >
@@ -193,7 +223,7 @@ export default function Lootboxes() {
       <div
         className={`${
           openBuy ? "h-auto" : "2xl:h-[569px]"
-        } min-h-[311px]  border-[0.1875rem] border-[#5b5b5b] rounded-[4rem] 2xl:rounded-[6.25rem] overflow-hidden bg-[#fffef5] shadow-card`}
+        } min-h-[311px]  border-[0.1875rem] border-[#5b5b5b] rounded-[4rem] xl:rounded-[6.25rem] overflow-hidden bg-[#fffef5] shadow-card`}
       >
         <div className="bg-[#a6e8fe] border-b-[0.1875rem] border-[#000] flex items-center gap-3 pl-[4.5rem] py-4">
           <div className="w-[1.5rem] h-[1.5rem] rounded-full bg-[#eb6e6e] border-[0.125rem] border-[#000]"></div>
@@ -201,7 +231,7 @@ export default function Lootboxes() {
           <div className="w-[1.5rem] h-[1.5rem] rounded-full bg-[#cce79e] border-[0.125rem] border-[#000]"></div>
         </div>
         {/* khi chưa ấn buy lootbox */}
-        {/* {!openBuy && (
+        {!openBuy && (
           <div className="py-[2rem] 2xl:py-[96px] px-[2rem] 2xl:px-[150px]">
             <div className="max-w-[80rem] w-full flex flex-col-reverse min-[1028px]:flex-row items-center ">
               <div className="xl:mr-[2rem] 2xl:px-6">
@@ -273,82 +303,11 @@ export default function Lootboxes() {
               </div>
             </div>
           </div>
-        )} */}
-        <div className="py-[2rem] 2xl:py-[96px] px-[2rem] 2xl:px-[150px]">
-          <div className="max-w-[80rem] w-full flex flex-col-reverse min-[1028px]:flex-row items-center ">
-            <div className="xl:mr-[2rem] 2xl:px-6">
-              <h1 className="my-4 text-[2.5rem] leading-[1.025em] sm:leading-none min-[1440px]:text-[2.875rem] 2xl:text-[3.125rem] max-w-[17rem] md:max-w-[36rem] min-[1028px]:max-w-[30rem] min-[1440px]:max-w-[35rem] font-Extra text-center font-900">
-                Open lootboxes to win{" "}
-                <span className="font-Extra font-[900]">$</span>
-                BIG!
-              </h1>
-              <h2 className="mb-[20px] mt-[35px] font-bold text-[#f48d97] leading-7  max-w-[17rem] md:max-w-[36rem] min-[1028px]:max-w-[31rem] min-[1440px]:max-w-[33rem] mx-auto text-center text-[24px]">
-                Enter our presale in a fun way! Open lootboxes to get a random
-                amount of $BIG tokens!
-              </h2>
-              <div className="mt-4 flex flex-col sm:flex-row justify-center items-center  max-w-[17rem] md:max-w-[36rem] min-[1028px]:max-w-[28rem] min-[1440px]:max-w-[35rem]">
-                <button
-                  className="m-[.5rem] bg-[#f38590] max-w-[13rem] w-full whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
-                  onClick={() => {
-                    setClick(true);
-                    handleClaim();
-                  }}
-                >
-                  Buy Lootboxes
-                </button>
+        )}
 
-                <button
-                  className="m-[.5rem] bg-[#f38590] max-w-[13rem] w-full whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
-                  onClick={() => {
-                    window.open(
-                      "https://opensea.io/collection/big-eyes-lootbox-cards",
-                      "_blank"
-                    );
-                  }}
-                >
-                  View on OpenSea
-                </button>
-              </div>
-            </div>
-            <div className="max-w-[30rem] xl:ml-[2rem]  relative">
-              <div className=" -left-[30%] min-[1028px]:left-0 2xl:left-[20%] relative">
-                <Image
-                  src="https://buy1.bigeyes.space/img/treasure-chest/treasure-chest.webp"
-                  className="hidden sm:block"
-                  width={280}
-                  height={250}
-                  alt=""
-                />
-                <Image
-                  src="https://buy1.bigeyes.space/img/treasure-chest/treasure-chest.webp"
-                  className="block sm:hidden"
-                  width={190}
-                  height={176}
-                  alt=""
-                />
-                <div className="absolute top-0 left-full -translate-y-[10%] -translate-x-[20%] w-[240px] h-[230px]">
-                  <Image
-                    src="https://buy1.bigeyes.space/img/cat-stretching/cat-stretching.webp"
-                    className="hidden sm:block"
-                    width={240}
-                    height={230}
-                    alt=""
-                  />
-                  <Image
-                    src="https://buy1.bigeyes.space/img/cat-stretching/cat-stretching.webp"
-                    className="block sm:hidden"
-                    width={130}
-                    height={130}
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         {/* khi ấn rồi sẽ ra ntn */}
-        {/* {openBuy && (
-          <div className="relative max-w-[65rem] py-[6rem] px-[5rem] w-full mx-auto">
+        {openBuy && (
+          <div className="relative max-w-[70rem] 2xl:max-w-[65rem]  py-[5rem] 2xl:py-[6rem] px-4 md:px-[3rem] xl:px-[5rem] w-full mx-auto">
             <div>
               <h1 className="relative text-[3.5rem] font-Extra font-[900] text-center mt-4">
                 Lootboxes
@@ -366,14 +325,14 @@ export default function Lootboxes() {
                 Reward
               </button>
             </div>
-            <div className="top-[8%] left-[4%] absolute">
+            <div className="top-8 md:top-[8%] left-20 md:left-[4%] absolute">
               <button class=" bg-[#f38590] p-[.5rem] text-white w-[2.5rem] h-[2.5rem] flex items-center justify-center border-[5px] border-[#F9C7CC] rounded-full">
                 <FaBars />
               </button>
               <div></div>
             </div>
             <button
-              className="absolute top-6 left-0 w-[48px] h-[48px] flex items-center justify-center bg-[#0000001a] rounded-full"
+              className="absolute top-6 left-4 md:left-0 w-[48px] h-[48px] flex items-center justify-center hover:bg-[#0000001a] rounded-full"
               onClick={() => {
                 setOpenBuy(false);
               }}
@@ -381,7 +340,7 @@ export default function Lootboxes() {
               <BsArrowLeftShort className="text-5xl" />
             </button>
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );

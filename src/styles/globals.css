@@ -64,7 +64,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 .ani-fade-down {
@@ -103,7 +102,7 @@ body {
 }
 
 .animate-flash {
-  animation: flash .35s infinite alternate;
+  animation: flash 0.35s infinite alternate;
 }
 
 @keyframes flash {
@@ -137,16 +136,21 @@ body {
 }
 
 .shadow-wallet {
-  box-shadow: rgba(14, 14, 44, 0.1) 0px 20px 36px -8px, rgba(0, 0, 0, 0.05) 0px 1px 1px;
+  box-shadow: rgba(14, 14, 44, 0.1) 0px 20px 36px -8px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px;
 }
 
 .bg-connect-wallet {
-  background: linear-gradient(139.73deg, rgb(229, 253, 255) 0%, rgb(243, 239, 255) 100%);
+  background: linear-gradient(
+    139.73deg,
+    rgb(229, 253, 255) 0%,
+    rgb(243, 239, 255) 100%
+  );
 }
 
 .slick-slider .slick-arrow {
   @apply w-[28px] h-[28px] bg-[#f38590] text-white rounded-full;
-  border: 5px solid #F9C7CC !important;
+  border: 5px solid #f9c7cc !important;
 }
 
 .slick-slider .slick-arrow.slick-disabled {
@@ -154,27 +158,24 @@ body {
 }
 
 .slick-slider .slick-next {
-  @apply right-[-50px];
-
+  @apply xl:right-[-50px];
 }
 
 .slick-slider .animate-live-text-flash {
-  animation: live-text-flash .65s infinite;
+  animation: live-text-flash 0.65s infinite;
 }
 
 .slick-slider .slick-list::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   width: 32px;
   height: 100%;
-  background:
-    linear-gradient(90deg, #fffef5 0%, transparent 100%);
+  background: linear-gradient(90deg, #fffef5 0%, transparent 100%);
 
   transform: rotate(180deg);
-
 }
 
 @keyframes live-text-flash {
@@ -201,5 +202,4 @@ body {
   85% {
     fill: #04f7fc;
   }
-
 }
