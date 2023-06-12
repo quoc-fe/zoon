@@ -11,9 +11,16 @@ import { useRecoilState } from "recoil";
 
 export default function HomeBanner() {
   const router = useRouter();
-
+  const { section } = router.query;
   const [open, setOpen] = useRecoilState(openModal);
-
+  const checkSection = () => {
+    if (section) {
+      if (section === "claim") {
+        return true;
+      }
+      return false;
+    }
+  };
   return (
     <div className="pt-[32px] px-4 min-[576px]:px-[36px] lg:px-[72px] 2xl:px-[104px] pb-[100px]">
       <div className="h-[200px] min-[576px]:h-[300px] lg:h-[500px] xl:h-[576px] 2xl:h-[1016px] w-full border-[5px] min-[576px]:border-[8px] border-white rounded-[2rem] min-[576px]:rounded-[4rem] lg:rounded-[7.5rem] 2xl:rounded-[120px] overflow-hidden home-banner flex items-center justify-center">
@@ -58,7 +65,7 @@ export default function HomeBanner() {
                   router.push("#buyToken");
                 }}
               >
-                Buy Tokens
+                {checkSection() ? "Claim" : "Buy Tokens"}
               </button>
               <button
                 className="bg-[#f38590] whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
