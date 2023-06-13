@@ -104,7 +104,7 @@ export default function BannerClaim() {
             </div>
             <div className="mt-[42px] flex items-center justify-center gap-3">
               <button
-                className="bg-[#f38590] w-[343px] whitespace-nowrap text-white border-[5px] text-[14px] hover:font-semibold border-transparent rounded-[12px]  w-[11rem] py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
+                className="bg-[#f38590] tracking-[2px] w-[343px] whitespace-nowrap text-white border-[5px] text-[14px] hover:font-semibold border-transparent rounded-[12px]  w-[11rem] py-[10px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
                 onClick={() => {
                   setClick(true);
                   handleClaim();
@@ -122,7 +122,7 @@ export default function BannerClaim() {
                 Buy Lootboxes
               </button> */}
               <button
-                className="bg-[#F9C7CC] w-[343px] whitespace-nowrap text-white border-[5px] text-[14px] hover:font-semibold border-[#F9C7CC] rounded-[12px]  py-[8px] px-[24px] font-semibold hover:bg-[#f38590] hover:text-black transition-all duration-300"
+                className="bg-[#F9C7CC] tracking-[2px] w-[343px] whitespace-nowrap text-white border-[5px] text-[14px] hover:font-semibold border-[#F9C7CC] rounded-[12px]  py-[10px] px-[24px] font-semibold hover:bg-[#f38590] hover:text-black transition-all duration-300"
                 onClick={() => {
                   const element = document.getElementById("howto");
                   element.scrollIntoView();
