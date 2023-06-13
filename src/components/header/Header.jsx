@@ -17,6 +17,7 @@ import { useRouter } from "next/router";
 import MetaMaskSDK from "@metamask/sdk";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { changeLang, openModal } from "@/recoil/commonRecoilState";
+import { useNetwork } from "wagmi";
 
 const languages = [
   { id: "ar", name: "Arabic" },
@@ -53,6 +54,7 @@ export default function Header() {
   const { section } = router.query;
   const [dropDown, setDropdown] = useState(false);
   const [open, setOpen] = useRecoilState(openModal);
+
   const renderLang = useCallback(() => {
     return languages.map((lang, index) => {
       return (
@@ -72,17 +74,17 @@ export default function Header() {
       );
     });
   }, []);
-  useEffect(() => {
-    if (section) {
-      if (section === "claim") {
-        const element = document.getElementById("claim");
-        element.scrollIntoView();
-      } else if (section === "lootboxes") {
-        const element = document.getElementById("Lootboxes");
-        element.scrollIntoView();
-      }
-    }
-  }, [router.isReady]);
+  // useEffect(() => {
+  //   if (section) {
+  //     if (section === "claim") {
+  //       const element = document.getElementById("claim");
+  //       element.scrollIntoView();
+  //     } else if (section === "lootboxes") {
+  //       const element = document.getElementById("Lootboxes");
+  //       element.scrollIntoView();
+  //     }
+  //   }
+  // }, [router.isReady]);
   return (
     <header className={` w-full  bg-transparent `}>
       <div className="py-[24px] px-[40px]">

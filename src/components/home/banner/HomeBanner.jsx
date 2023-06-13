@@ -25,37 +25,24 @@ export default function HomeBanner() {
   return (
     <div className="pt-[32px] px-4 min-[576px]:px-[36px] lg:px-[72px] 2xl:px-[104px] pb-[100px]">
       <div className="h-[200px] min-[576px]:h-[300px] lg:h-[500px] xl:h-[576px] 2xl:h-[1016px] w-full border-[5px] min-[576px]:border-[8px] border-white rounded-[2rem] min-[576px]:rounded-[4rem] lg:rounded-[7.5rem] 2xl:rounded-[120px] overflow-hidden home-banner flex items-center justify-center">
-        <div className="hidden lg:block shadow-banner  max-w-[90%] xl:max-w-[80%] 2xl:max-w-[70%] bg-[#fffef5] h-[95%] rounded-[6.25rem] p-[32px] 2xl:p-[110px] flex items-center justify-center">
+        <div className="hidden lg:block shadow-banner  max-w-[90%] xl:max-w-[80%] 2xl:max-w-[70%] bg-[#fffef5] h-[90%] 2xl:h-[95%] rounded-[4rem] 2xl:rounded-[6.25rem] p-[32px] lg:px-[86px] 2xl:p-[110px] flex items-center justify-center">
           <div className="pb-[32px]  2xl:p-[90px] ">
             <div className="flex justify-center">
-              <Image
-                className="hidden 2xl:block"
-                src={Presale}
-                width={200}
-                height={80}
-                alt=""
-              />
-              <Image
-                className="block 2xl:hidden"
-                src={Presale}
-                width={128}
-                height={64}
-                alt=""
-              />
+              <Image src={Presale} width={200} height={80} alt="" />
             </div>
             <h1 className=" mt-4 2xl:mb-4 2xl:mt-[40px] font-Extra font-[900] text-[40px] 2xl:text-[50px] text-center">
               100<span className="font-bubblegum text-[0.85em]">%</span>Secure
               Zone
             </h1>
-            <p className="my-[16px] 2xl:my-[18px] text-base 2xl:text-[20px] text-center w-[640px] 2xl:w-[480px] mx-auto">
+            <p className="my-[16px] 2xl:my-[18px] text-base xl:text-[18px] 2xl:text-[20px] text-center w-[640px] 2xl:w-[480px] mx-auto">
               Big Eyes is the ultimate memecoin platform, and it couldn't be
               easier to get your hands on the token in our presale.
             </p>
-            <p className="my-[16px] 2xl:my-[18px] text-base 2xl:text-[20px] text-center w-[640px] 2xl:w-[480px] mx-auto">
+            <p className="my-[16px] 2xl:my-[18px] text-base xl:text-[18px] 2xl:text-[20px] text-center w-[640px] 2xl:w-[480px] mx-auto">
               Contract code fully audited by Solidity Finance and shown to be
               100% secure.
             </p>
-            <p className="my-[16px] 2xl:my-[20px] text-base 2xl:text-[20px] text-center w-[640px] 2xl:w-[480px] mx-auto">
+            <p className="my-[16px] 2xl:my-[20px] text-base xl:text-[18px] 2xl:text-[20px] text-center w-[640px] 2xl:w-[480px] mx-auto">
               You can buy direct using USDT, ETH or BNB. After the public sale
               ends, you'll claim your purchased Big Eyes using the claim page.
             </p>

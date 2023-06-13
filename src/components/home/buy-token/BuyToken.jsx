@@ -97,17 +97,18 @@ export default function BuyToken() {
           >
             <div className=" relative py-4 sm:py-8 px-8 border-[.1875rem] border-[#c4c4c4] max-w-[27rem] w-full rounded-[2.1875rem] text-center">
               <p className="text-[#f38590] text-[1.5rem] font-bold text-center my-4">
-                Claim now
+                PRESALE ENDED
               </p>
               {address && (
                 <>
                   <p className="text-[#f38590] text-base sm:text-[1.5rem] font-bold text-center sm:mt-4">
-                    You have claim 0 Big Eyes tokens.
+                    You have 0 Big Eyes tokens.
                   </p>
                   <div
                     className="text-[#11a6d5] font-semibold cursor-pointer mb-2"
                     onClick={() => {
-                      router.push("#calculator");
+                      const element = document.getElementById("calculator");
+                      element.scrollIntoView();
                     }}
                   >
                     View your potential returns
@@ -128,14 +129,15 @@ export default function BuyToken() {
                   Connect Wallet
                 </button>
               )}
-              {address && (
+              {/* claim here */}
+              {/* {address && (
                 <button
                   className="bg-[#f38590] mb-2 max-w-[19rem] w-full whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
                   onClick={handleClaim}
                 >
                   Claim now
                 </button>
-              )}
+              )} */}
               {address && (
                 <button
                   className="bg-[#f38590] max-w-[19rem] w-full whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.25rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
@@ -144,7 +146,6 @@ export default function BuyToken() {
                   Disconnect
                 </button>
               )}
-
               <Image
                 src="https://buy1.bigeyes.space/img/stars/stars.webp"
                 className="absolute top-2 right-2"
@@ -195,7 +196,7 @@ export default function BuyToken() {
               </div>
               <div className="mt-[30px] 2xl:mt-0">
                 <p className="text-[#999] text-center text-[20px] 2xl:text-[1.5rem] font-bold mb-[24px]">
-                  Claim now
+                  PRESALE ENDED
                 </p>
                 <div className="buy-token-multiDot h-[4rem] border-[4px] border-[#757473]  rounded-[1.5rem] bg-[#a3e6fb] w-full p-[0.5rem]">
                   <div className="w-full hidden min-[1800px]:flex overflow-hidden rounded-[1rem] border-[3px] border-[#6c6b6b] h-full bg-[#fffdf5]  py-[0.2rem] px-[0.5rem] gap-1 justify-center">

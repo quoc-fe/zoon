@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { MdClose } from "react-icons/md";
 import { useRecoilState } from "recoil";
 import { useAccount, useConnect, useDisconnect, useNetwork } from "wagmi";
-export default function ConnectWallet() {
+export default function ConnectWalletClaim() {
   const { connector: activeConnector, isConnected, address } = useAccount();
   const { disconnectAsync } = useDisconnect();
   const { connectAsync, error } = useConnect();
@@ -22,20 +22,21 @@ export default function ConnectWallet() {
     }
   };
   return (
-    <div className="min-w-[320px] bg-white shadow-wallet border border-[rgb(231,227,235)] rounded-[32px] overflow-hidden">
-      <div className="flex items-center justify-between py-3 px-[24px] bg-connect-wallet border-b border-[rgb(231,227,235)]">
-        <h2 className="font-bold text-xl">Connect Wallet</h2>
+    <div className="min-w-[320px] bg-white shadow-wallet border border-[rgb(231,227,235)] rounded-[32px] ">
+      <div className="relative flex items-center justify-between py-3 px-[24px]  border-b border-[rgb(231,227,235)]">
+        <h2 className="font-bold text-xl font-Extra">Connect by:</h2>
         <button
+          className="absolute top-0 right-0  -translate-y-[30%] translate-x-[20%] bg-white w-[40px] h-[40px] border border-[#ddd] rounded-full flex items-center justify-center"
           onClick={() => {
             setOpen({ ...open, open: false });
           }}
         >
-          <MdClose className="text-2xl text-[rgb(31,199,212)]" />
+          <MdClose className="text-2xl text-[#9c9c9c] " />
         </button>
       </div>
-      <div className="pt-[24px] grid grid-cols-2">
+      <div className="p-4 grid grid-cols-2 gap-2">
         <button
-          className="flex flex-col items-center py-4 px-[24px] hover:opacity-80"
+          className="flex flex-col items-center py-4 px-[24px] hover:bg-[#f1f1f1] border border-[#ddd] rounded-[12px] "
           onClick={() => {
             setOpen({ ...open, open: false });
             handleConnect(Connectors[0]);
@@ -170,7 +171,7 @@ export default function ConnectWallet() {
           </div>
         </button>
         <button
-          className="flex flex-col items-center py-4 px-[24px] hover:opacity-80"
+          className="flex flex-col items-center py-4 px-[24px] hover:bg-[#f1f1f1] border border-[#ddd] rounded-[12px]"
           onClick={() => {
             setOpen({ ...open, open: false });
             handleConnect(Connectors[1]);
@@ -190,75 +191,6 @@ export default function ConnectWallet() {
           </svg>
           <div font-size="14px" color="text" class="sc-gsnTZi kAJfza">
             WalletConnect
-          </div>
-        </button>
-        <button
-          className="flex flex-col items-center py-4 px-[24px] hover:opacity-80"
-          onClick={() => {
-            setOpen({ ...open, open: false });
-            handleConnect(Connectors[0]);
-          }}
-        >
-          <svg
-            x="0px"
-            y="0px"
-            viewBox="0 0 1000 1000"
-            width="40px"
-            color="text"
-            xmlns="http://www.w3.org/2000/svg"
-            class="sc-bczRLJ hjvUNK"
-          >
-            <linearGradient
-              id="a"
-              gradientUnits="userSpaceOnUse"
-              x1="416.6229"
-              y1="16.304"
-              x2="416.6229"
-              y2="985.446"
-            >
-              <stop offset="0.3" stop-color="#ff1b2d"></stop>
-              <stop offset="0.4381" stop-color="#fa1a2c"></stop>
-              <stop offset="0.5939" stop-color="#ed1528"></stop>
-              <stop offset="0.7581" stop-color="#d60e21"></stop>
-              <stop offset="0.9272" stop-color="#b70519"></stop>
-              <stop offset="1" stop-color="#a70014"></stop>
-            </linearGradient>
-            <path
-              d="M335.4 781.8c-55.3-65.3-91.1-161.7-93.5-270v-23.6c2.4-108.3 38.2-204.7 93.5-270C407.2 125.1 513.8 66 632.8 66c73.2 0 141.8 22.4 200.4 61.3C745.2 48.5 629.2.5 501.9 0H500C223.9 0 0 223.9 0 500c0 268.2 211.1 487 476.2 499.4 7.9.4 15.8.6 23.8.6 128 0 244.8-48.1 333.2-127.2-58.6 38.8-127.1 61.2-200.4 61.2-119 0-225.6-59.1-297.4-152.2z"
-              fill="url(#a)"
-            ></path>
-            <linearGradient
-              id="b"
-              gradientUnits="userSpaceOnUse"
-              x1="667.7092"
-              y1="73.4257"
-              x2="667.7092"
-              y2="930.5844"
-            >
-              <stop offset="0" stop-color="#9c0000"></stop>
-              <stop offset="0.7" stop-color="#ff4b4b"></stop>
-            </linearGradient>
-            <path
-              d="M335.4 218.2c45.9-54.2 105.1-86.8 169.9-86.8 145.6 0 263.5 165 263.5 368.6s-118 368.6-263.5 368.6c-64.7 0-124-32.7-169.9-86.8C407.2 874.9 513.8 934 632.8 934c73.2 0 141.8-22.4 200.4-61.2C935.6 781.2 1000 648.1 1000 500c0-148.1-64.4-281.2-166.8-372.7C774.6 88.4 706.1 66 632.8 66c-119 0-225.6 59.1-297.4 152.2z"
-              fill="url(#b)"
-            ></path>
-          </svg>
-          <div font-size="14px" color="text" class="sc-gsnTZi kAJfza">
-            Opera Wallet
-          </div>
-        </button>
-        <button className="flex flex-col items-center py-4 px-[24px] hover:opacity-80">
-          <svg
-            viewBox="0 0 24 24"
-            width="40px"
-            color="textSubtle"
-            xmlns="http://www.w3.org/2000/svg"
-            class="sc-bczRLJ fIQKIW"
-          >
-            <path d="M6 10C4.9 10 4 10.9 4 12C4 13.1 4.9 14 6 14C7.1 14 8 13.1 8 12C8 10.9 7.1 10 6 10ZM18 10C16.9 10 16 10.9 16 12C16 13.1 16.9 14 18 14C19.1 14 20 13.1 20 12C20 10.9 19.1 10 18 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z"></path>
-          </svg>
-          <div font-size="14px" color="text" class="sc-gsnTZi kAJfza">
-            More
           </div>
         </button>
       </div>

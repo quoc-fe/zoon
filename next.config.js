@@ -33,7 +33,7 @@ const nextConfig = {
   //   localeDetection: true,
   // },
   images: {
-    domains: ["buy1.bigeyes.space"],
+    domains: ["buy1.bigeyes.space", "claim.bigeyes.space"],
   },
 };
 
