@@ -25,7 +25,7 @@ export default function HomeBanner() {
   return (
     <div className="pt-[32px] px-4 min-[576px]:px-[36px] lg:px-[72px] 2xl:px-[104px] pb-[100px]">
       <div className="h-[200px] min-[576px]:h-[300px] lg:h-[500px] xl:h-[576px] 2xl:h-[1016px] w-full border-[5px] min-[576px]:border-[8px] border-white rounded-[2rem] min-[576px]:rounded-[4rem] lg:rounded-[7.5rem] 2xl:rounded-[120px] overflow-hidden home-banner flex items-center justify-center">
-        <div className="hidden lg:block shadow-banner  max-w-[90%] xl:max-w-[80%] 2xl:max-w-[70%] bg-[#fffef5] h-[90%] 2xl:h-[95%] rounded-[4rem] 2xl:rounded-[6.25rem] p-[32px] lg:px-[86px] 2xl:p-[110px] flex items-center justify-center">
+        <div className="hidden lg:flex shadow-banner  max-w-[90%] xl:max-w-[80%] 2xl:max-w-[70%] bg-[#fffef5] h-[90%] 2xl:h-[95%] rounded-[4rem] 2xl:rounded-[6.25rem] p-[32px] lg:px-[86px] 2xl:p-[110px] flex items-center justify-center">
           <div className="pb-[32px]  2xl:p-[90px] ">
             <div className="flex justify-center">
               <Image src={Presale} width={200} height={80} alt="" />
@@ -54,7 +54,7 @@ export default function HomeBanner() {
                   element.scrollIntoView();
                 }}
               >
-                Claim Tokens
+                Buy Tokens
               </button>
               <button
                 className="bg-[#f38590] whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
@@ -75,6 +75,60 @@ export default function HomeBanner() {
                 How to Buy
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-[3rem] block lg:hidden shadow-banner   bg-[#fffef5] rounded-[4rem] 2xl:rounded-[6.25rem] p-[2rem]">
+        <div className="py-[6rem]">
+          <div className="flex justify-center">
+            <Image src={Presale} width={200} height={80} alt="" />
+          </div>
+          <h1 className="leading-[1.032em] mt-4 2xl:mb-4 2xl:mt-[40px] font-Extra font-[900] text-[40px] 2xl:text-[50px] text-center">
+            100<span className="font-bubblegum text-[0.85em]">%</span>Secure
+            Zone
+          </h1>
+          <div className="sm:px-[4rem]">
+            <p className="my-[16px] 2xl:my-[18px] text-base sm:w-[468px] text-center  mx-auto">
+              Big Eyes is the ultimate memecoin platform, and it couldn't be
+              easier to get your hands on the token in our presale.
+            </p>
+            <p className="my-[16px] 2xl:my-[18px] text-base sm:w-[468px] text-center  mx-auto">
+              Contract code fully audited by Solidity Finance and shown to be
+              100% secure.
+            </p>
+            <p className="my-[16px] 2xl:my-[20px] text-base sm:w-[468px] text-center  mx-auto">
+              You can buy direct using USDT, ETH or BNB. After the public sale
+              ends, you'll claim your purchased Big Eyes using the claim page.
+            </p>
+          </div>
+          <div className="mt-[42px] flex flex-col items-center justify-center gap-3">
+            <button
+              className="bg-[#f38590] w-[176px] h-[56px]  whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full w-[11rem] py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
+              onClick={() => {
+                const element = document.getElementById("claim");
+                element.scrollIntoView();
+              }}
+            >
+              Buy Tokens
+            </button>
+            <button
+              className="bg-[#f38590] w-[176px] h-[56px]  whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
+              onClick={() => {
+                const element = document.getElementById("Lootboxes");
+                element.scrollIntoView();
+              }}
+            >
+              Buy Lootboxes
+            </button>
+            <button
+              className="bg-[#F9C7CC] w-[176px] h-[56px]  whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#f38590] hover:text-black transition-all duration-300"
+              onClick={() => {
+                const element = document.getElementById("howto");
+                element.scrollIntoView();
+              }}
+            >
+              How to Buy
+            </button>
           </div>
         </div>
       </div>

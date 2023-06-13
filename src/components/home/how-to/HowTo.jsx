@@ -157,7 +157,7 @@ export default function HowTo() {
           <div className="w-full h-[1px] bg-[#c4c4c4] my-[8rem]"></div>
           {/* step2 */}
           <div>
-            <div className="flex  flex-col lg:flex-row items-center ">
+            <div className="flex  flex-col xl:flex-row items-center ">
               <div className="flex-1">
                 {/* title */}
                 <div className="flex items-center gap-3">
@@ -183,8 +183,8 @@ export default function HowTo() {
               </div>
               <div className="flex-1"></div>
             </div>
-            <div className="flex flex-col lg:flex-row items-center gap-4 ">
-              <div className="flex-1 md:flex items-center lg:block py-[2rem] px-[1rem] border border-[#C4C4C4] rounded-[2.375rem]">
+            <div className="flex flex-col xl:flex-row items-center gap-4 ">
+              <div className="flex-1 md:flex items-center xl:block xl:h-[730px] 2xl:h-[620px] py-[2rem] px-[1rem] border border-[#C4C4C4] rounded-[2.375rem]">
                 <div className="w-[186px] h-[186px] mx-auto">
                   <Image
                     src="https://buy1.bigeyes.space/img/wallet-coins/wallet-coins.webp"
@@ -225,7 +225,7 @@ export default function HowTo() {
                   </p>
                 </div>
               </div>
-              <div className="flex-1 md:flex items-center lg:block py-[2rem] px-[1rem] border border-[#C4C4C4] rounded-[2.375rem]">
+              <div className="flex-1 md:flex items-center xl:block xl:h-[730px] 2xl:h-[620px] py-[2rem] px-[1rem] border border-[#C4C4C4] rounded-[2.375rem]">
                 <div className="w-[186px] h-[186px] mx-auto">
                   <Image
                     src="https://buy1.bigeyes.space/img/paw-diamond/paw-diamond.webp"
@@ -250,7 +250,7 @@ export default function HowTo() {
                   </p>
                 </div>
               </div>
-              <div className="flex-1 md:flex items-center lg:block py-[2rem] px-[1rem] border border-[#C4C4C4] rounded-[2.375rem]">
+              <div className="flex-1 md:flex items-center xl:block xl:h-[730px] 2xl:h-[620px] py-[2rem] px-[1rem] border border-[#C4C4C4] rounded-[2.375rem]">
                 <div className="w-[186px] h-[186px] mx-auto">
                   <Image
                     src="https://buy1.bigeyes.space/img/phone/phone.webp"
