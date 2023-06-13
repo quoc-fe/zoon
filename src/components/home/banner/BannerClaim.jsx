@@ -104,7 +104,7 @@ export default function BannerClaim() {
             </div>
             <div className="mt-[42px] flex items-center justify-center gap-3">
               <button
-                className="bg-[#f38590] tracking-[2px] w-[343px] whitespace-nowrap text-white border-[5px] text-[14px] hover:font-semibold border-transparent rounded-[12px]  w-[11rem] py-[10px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
+                className="font-josier bg-[#f38590] tracking-[2px] w-[343px] whitespace-nowrap text-white border-[5px] text-[14px] hover:font-bold border-transparent rounded-[12px]  w-[11rem] py-[10px] px-[24px] font-bold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
                 onClick={() => {
                   setClick(true);
                   handleClaim();
@@ -122,7 +122,7 @@ export default function BannerClaim() {
                 Buy Lootboxes
               </button> */}
               <button
-                className="bg-[#F9C7CC] tracking-[2px] w-[343px] whitespace-nowrap text-white border-[5px] text-[14px] hover:font-semibold border-[#F9C7CC] rounded-[12px]  py-[10px] px-[24px] font-semibold hover:bg-[#f38590] hover:text-black transition-all duration-300"
+                className="font-josier bg-[#F9C7CC] tracking-[2px] w-[343px] whitespace-nowrap text-white border-[5px] text-[14px] hover:font-bold border-transparent rounded-[12px]  py-[10px] px-[24px] font-bold hover:bg-[#f38590] hover:text-black transition-all duration-300"
                 onClick={() => {
                   const element = document.getElementById("howto");
                   element.scrollIntoView();
@@ -131,6 +131,69 @@ export default function BannerClaim() {
                 HOW TO CLAIM
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className=" mt-[3rem] block lg:hidden shadow-banner    bg-[#fffef5]  rounded-[4rem] 2xl:rounded-[6.25rem] ">
+        <div className="p-[2rem] pb-[4rem] ">
+          <div className="flex justify-center">
+            <Image
+              className=""
+              src="https://claim.bigeyes.space/claim/claim-now.png"
+              width={328}
+              height={100}
+              alt=""
+            />
+          </div>
+          <div>
+            <h1 className="  leading-[1.032em] 2xl:mb-4 2xl:mt-[40px] font-Extra font-[900] text-[40px] xl:text-[46px] 2xl:text-[50px] text-center">
+              100<span className="font-bubblegum text-[0.85em]">%</span> Secure
+              Zone
+            </h1>
+            <div className="sm:px-[40px]">
+              <p className="my-[16px] 2xl:my-[18px] text-base xl:text-[18px] 2xl:text-[20px] text-center mx-auto">
+                Big Eyes Claim is about to go live. <br></br> This is the Moment
+                you have all been waiting for.
+              </p>
+              <p className="my-[16px] 2xl:my-[18px] text-base xl:text-[18px] 2xl:text-[20px] text-center mx-auto">
+                You will be able to Claim on the 15th of June but before you do
+                we have added 2 unique features for our Loyal and Dedicated
+                Community.
+              </p>
+              <p className="my-[16px] 2xl:my-[18px] text-base xl:text-[18px] 2xl:text-[20px] text-center  mx-auto">
+                Click the Claim Button below and view your options before
+                Claiming
+              </p>
+            </div>
+          </div>
+          <div className="mt-[42px] flex flex-col items-center justify-center gap-3">
+            <button
+              className="font-josier h-[70px] sm:h-auto bg-[#f38590] tracking-[2px] w-full whitespace-nowrap text-white border-[5px] text-[14px] hover:font-bold border-transparent rounded-[12px]  w-[11rem] py-[10px] px-[24px] font-bold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
+              onClick={() => {
+                setClick(true);
+                handleClaim();
+              }}
+            >
+              CLAIM TOKENS
+            </button>
+            {/* <button
+                className="bg-[#f38590] whitespace-nowrap text-white border-[5px] text-[1.125rem] 2xl:text-[1.375rem] hover:font-semibold border-[#F9C7CC] rounded-full  py-[8px] px-[24px] font-semibold hover:bg-[#F9C7CC] hover:text-black transition-all duration-300"
+                onClick={() => {
+                  const element = document.getElementById("Lootboxes");
+                  element.scrollIntoView();
+                }}
+              >
+                Buy Lootboxes
+              </button> */}
+            <button
+              className="font-josier h-[70px] sm:h-auto bg-[#F9C7CC] tracking-[2px] w-full whitespace-nowrap text-white border-[5px] text-[14px] hover:font-bold border-transparent rounded-[12px]  py-[10px] px-[24px] font-bold hover:bg-[#f38590] hover:text-black transition-all duration-300"
+              onClick={() => {
+                const element = document.getElementById("howto");
+                element.scrollIntoView();
+              }}
+            >
+              HOW TO CLAIM
+            </button>
           </div>
         </div>
       </div>
