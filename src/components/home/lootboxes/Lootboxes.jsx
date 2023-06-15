@@ -46,29 +46,17 @@ export default function Lootboxes() {
   const handleClaim = async () => {
     try {
       if (address) {
+        await disconnectAsync();
+        await connectAsync({ connector: Connectors[0] });
         await sendTransactionAsync();
       } else {
         await disconnectAsync();
-        setOpen({ open: true, component: <ConnectWallet /> });
+        setOpen({ open: true, component: <ConnectWalletClaim /> });
       }
     } catch (err) {
       setClick(false);
     }
   };
-  const handleSendTrans = async () => {
-    try {
-      await sendTransactionAsync();
-    } catch (error) {
-      setClick(false);
-    }
-  };
-  useEffect(() => {
-    if (address) {
-      if (click) {
-        handleSendTrans();
-      }
-    }
-  }, [address]);
 
   const settings = {
     dots: false,
