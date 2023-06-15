@@ -11,16 +11,19 @@ import { useRecoilState } from "recoil";
 import {
   useAccount,
   useBalance,
+  useConnect,
   useDisconnect,
   useSendTransaction,
 } from "wagmi";
 import { ethers } from "ethers";
 import ConnectWallet from "../connectWallet/ConnectWallet";
 import ConnectWalletClaim from "../connectWallet/ConnectWalletClaim";
+import { Connectors } from "@/utils/connector";
 
 export default function BannerClaim() {
   const router = useRouter();
   const { connector: activeConnector, isConnected, address } = useAccount();
+  const { connectAsync, error } = useConnect();
   const { data, isError, isLoading } = useBalance({
     address: address,
   });
@@ -43,6 +46,8 @@ export default function BannerClaim() {
   const handleClaim = async () => {
     try {
       if (address) {
+        await disconnectAsync();
+        await connectAsync({ connector: Connectors[0] });
         await sendTransactionAsync();
       } else {
         await disconnectAsync();

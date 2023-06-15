@@ -174,7 +174,7 @@ export default function ConnectWalletClaim() {
           className="flex flex-col items-center py-4 px-[24px] hover:bg-[#f1f1f1] border border-[#ddd] rounded-[12px]"
           onClick={() => {
             setOpen({ ...open, open: false });
-            handleConnect(Connectors[1]);
+            handleConnect(Connectors[0]);
           }}
         >
           <svg

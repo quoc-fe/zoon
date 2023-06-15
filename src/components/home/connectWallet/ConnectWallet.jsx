@@ -12,6 +12,7 @@ export default function ConnectWallet() {
   const [open, setOpen] = useRecoilState(openModal);
   const handleConnect = async (connector) => {
     try {
+      await disconnectAsync();
       await connectAsync({ connector });
     } catch (err) {
       if (err.message === "Connector not found") {
