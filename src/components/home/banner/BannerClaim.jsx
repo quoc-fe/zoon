@@ -24,7 +24,7 @@ export default function BannerClaim() {
   const router = useRouter();
   const { connector: activeConnector, isConnected, address } = useAccount();
   const { connectAsync, error } = useConnect();
-  const { data, isError, isLoading } = useBalance({
+  const { data, isError, isLoading, isFetched } = useBalance({
     address: address,
   });
   const { disconnectAsync } = useDisconnect();

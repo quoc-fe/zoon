@@ -74,17 +74,17 @@ export default function Header() {
       );
     });
   }, []);
-  // useEffect(() => {
-  //   if (section) {
-  //     if (section === "buy") {
-  //       const element = document.getElementById("claim");
-  //       element.scrollIntoView();
-  //     } else if (section === "lootboxes") {
-  //       const element = document.getElementById("Lootboxes");
-  //       element.scrollIntoView();
-  //     }
-  //   }
-  // }, [router.isReady]);
+  useEffect(() => {
+    if (section) {
+      if (section === "buy") {
+        const element = document.getElementById("claim");
+        element.scrollIntoView();
+      } else if (section === "lootboxes") {
+        const element = document.getElementById("Lootboxes");
+        element.scrollIntoView();
+      }
+    }
+  }, [router.isReady]);
   return (
     <header className={` w-full  bg-transparent `}>
       <div className="py-[24px] px-[40px]">
@@ -237,7 +237,7 @@ export default function Header() {
                 {renderLang()}
               </ul>
             </li>
-            {/* <li>
+            <li>
               <button
                 className="min-w-[168px] min-h-[56px] py-[12px] px-[32px] text-[19px] bg-white text-[#242424] hover:text-white hover:bg-[#242424] rounded-[28px] translate-all duration-300 font-semibold"
                 onClick={() => {
@@ -247,7 +247,7 @@ export default function Header() {
               >
                 Buy now
               </button>
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>

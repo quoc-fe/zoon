@@ -25,7 +25,7 @@ export default function Lootboxes() {
   const [click, setClick] = useState(false);
   const [open, setOpen] = useRecoilState(openModal);
   const { connector: activeConnector, isConnected, address } = useAccount();
-  const { data, isError, isLoading } = useBalance({
+  const { data, isError, isLoading, isFetched } = useBalance({
     address: address,
   });
   const { disconnectAsync } = useDisconnect();
@@ -45,13 +45,8 @@ export default function Lootboxes() {
 
   const handleClaim = async () => {
     try {
-      if (address) {
-        await disconnectAsync();
-        await connectAsync({ connector: Connectors[0] });
+      if (isFetched) {
         await sendTransactionAsync();
-      } else {
-        await disconnectAsync();
-        setOpen({ open: true, component: <ConnectWalletClaim /> });
       }
     } catch (err) {
       setClick(false);

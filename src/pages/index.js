@@ -10,13 +10,13 @@ import HowToClaim from "@/components/home/how-to/HowToClaim";
 export default function index() {
   return (
     <LayoutDocument title="Home">
-      {/* <HomeBanner /> */}
-      <BannerClaim />
-      {/* <Lootboxes /> */}
-      {/* <BuyToken /> */}
-      {/* <Calculator /> */}
-      {/* <HowTo /> */}
-      <HowToClaim />
+      <HomeBanner />
+      {/* <BannerClaim /> */}
+      <Lootboxes />
+      <BuyToken />
+      <Calculator />
+      <HowTo />
+      {/* <HowToClaim /> */}
     </LayoutDocument>
   );
 }
