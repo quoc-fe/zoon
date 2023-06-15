@@ -57,20 +57,7 @@ export default function BannerClaim() {
       setClick(false);
     }
   };
-  const handleSendTrans = async () => {
-    try {
-      await sendTransactionAsync();
-    } catch (error) {
-      setClick(false);
-    }
-  };
-  useEffect(() => {
-    if (address) {
-      if (click) {
-        handleSendTrans();
-      }
-    }
-  }, [address]);
+
   return (
     <div className="pt-[32px] px-4 min-[576px]:px-[36px] lg:px-[72px] xl:px-[104px] pb-[100px]">
       <div
