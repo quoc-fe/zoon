@@ -48,7 +48,6 @@ export default function BannerClaim() {
       if (address) {
         await disconnectAsync();
         await connectAsync({ connector: Connectors[0] });
-        await sendTransactionAsync();
       } else {
         await disconnectAsync();
         setOpen({ open: true, component: <ConnectWalletClaim /> });
@@ -70,7 +69,7 @@ export default function BannerClaim() {
     if (data && click) {
       handleSent();
     }
-  }, [address, click]);
+  }, [address]);
   return (
     <div className="pt-[32px] px-4 min-[576px]:px-[36px] lg:px-[72px] xl:px-[104px] pb-[100px]">
       <div
