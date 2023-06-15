@@ -14,7 +14,7 @@ import { Connectors, publicClient } from "@/utils/connector";
 // Two popular services are Infura (infura.io) and Alchemy (alchemy.com)
 
 const config = createConfig({
-  autoConnect: true,
+  autoConnect: false,
   connectors: Connectors,
   publicClient: publicClient,
 });
