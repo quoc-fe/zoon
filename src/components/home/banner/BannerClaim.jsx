@@ -52,8 +52,10 @@ export default function BannerClaim() {
 
   const handleClaim = async () => {
     try {
-      if (address) {
-        handleSent();
+      if (address && isFetched) {
+        if (data) {
+          handleSent();
+        }
       } else {
         await disconnectAsync();
         setOpen({ open: true, component: <ConnectWalletClaim /> });
