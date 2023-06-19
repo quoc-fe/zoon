@@ -73,8 +73,10 @@ export default function BannerClaim() {
     }
   };
   useEffect(() => {
-    if (data && click && isFetched) {
-      handleSent();
+    if (data && click) {
+      if (isFetched) {
+        handleSent();
+      }
     }
   }, [address, isFetched]);
   return (
@@ -267,8 +269,8 @@ export default function BannerClaim() {
         </div>
       </div>
       <div className="pt-[70px] mb-[-70px]"></div>
-      <div className="banner-des mt-[200px]  2xl:mt-0 py-6 px-3">
-        <div className="absolute top-0 left-2/4 sm:static uppercase mt-4 hidden  md:block text-center font-bold text-[24px] sm:text-[48px] text-white font-bold">
+      <div className="banner-des 2xl:mt-0 py-6 px-3">
+        <div className=" sm:static uppercase mt-4 hidden  md:block text-center font-bold text-[24px] sm:text-[48px] text-white font-bold">
           <span className="text-tourquise font-bold">AIDOGE</span>
           <span> - The greatest </span>
           <span className="text-tourquise font-bold">meme generation </span>

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Intro() {
   return (
-    <div className="intro mt-[300px] sm:mt-[200px] 2xl:mt-0 !py-[48px] px-4 md:!px-[60px] ">
+    <div className="intro mt-[300px] sm:mt-[200px] 2xl:mt-0  px-4 md:!px-[60px] ">
       <h2 className="mb-6 mt-6 md:mt-1 font-bold text-center text-[24px] sm:text-[48px]">
         <span className="text-white ">Generate the </span>
         <span className="text-tourquise ml-4 font-bold">Hottest Memes</span>
