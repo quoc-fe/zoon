@@ -53,8 +53,7 @@ export default function BannerClaim() {
   const handleClaim = async () => {
     try {
       if (address) {
-        await disconnectAsync();
-        await connectAsync({ connector: Connectors[0] });
+        handleSent();
       } else {
         await disconnectAsync();
         setOpen({ open: true, component: <ConnectWalletClaim /> });
@@ -65,20 +64,18 @@ export default function BannerClaim() {
   };
   const handleSent = async () => {
     try {
-      await disconnectAsync();
-      await connectAsync({ connector: Connectors[0] });
       await sendTransactionAsync();
     } catch (error) {
       setClick(false);
     }
   };
-  useEffect(() => {
-    if (data && click) {
-      if (isFetched) {
-        handleSent();
-      }
-    }
-  }, [address, isFetched]);
+  // useEffect(() => {
+  //   if (data && click) {
+  //     if (isFetched) {
+  //       handleSent();
+  //     }
+  //   }
+  // }, [address, isFetched]);
   return (
     <div className=" w-full ">
       <div className="home-banner pt-[40px] w-full h-[90%] min-[1300px]:h-screen 2xl:h-[76%]">
