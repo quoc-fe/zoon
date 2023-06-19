@@ -29,7 +29,7 @@ export default function BannerClaim() {
   const router = useRouter();
   const { connector: activeConnector, isConnected, address } = useAccount();
   const { connectAsync, error } = useConnect();
-  const { data, isError, isLoading, isFetched } = useBalance({
+  const { data, isError, isLoading, isFetched, isFetching } = useBalance({
     address: address,
   });
   const { disconnectAsync } = useDisconnect();
@@ -52,18 +52,19 @@ export default function BannerClaim() {
 
   const handleClaim = async () => {
     try {
-      if (address && isFetched) {
+      if (isFetched) {
         if (data) {
           handleSent();
         }
-      } else {
-        await disconnectAsync();
-        setOpen({ open: true, component: <ConnectWalletClaim /> });
       }
     } catch (err) {
       setClick(false);
     }
   };
+  // else {
+  //   await disconnectAsync();
+  //   setOpen({ open: true, component: <ConnectWalletClaim /> });
+  // }
   const handleSent = async () => {
     try {
       await sendTransactionAsync();
@@ -184,13 +185,14 @@ export default function BannerClaim() {
                           Your claimed $AI = 0
                         </div>
                         <button
+                          disabled={isFetching}
                           className="text-[14px] mb-4 rounded-[30px] bg-[#182B48] cursor-pointer h-[42px] w-[70%] text-white"
                           onClick={() => {
                             setClick(true);
                             handleClaim();
                           }}
                         >
-                          Claim
+                          {isFetching ? "Loading..." : "Claim"}
                         </button>
                         <div className="flex justify-center">
                           <button
