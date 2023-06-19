@@ -52,8 +52,8 @@ export default function BannerClaim() {
 
   const handleClaim = async () => {
     try {
-      if (address && isFetched) {
-        if (data) {
+      if (address) {
+        if (data && isFetched) {
           handleSent();
         }
       } else {
@@ -134,26 +134,22 @@ export default function BannerClaim() {
                         completed,
                         days,
                       }) => {
-                        if (completed) {
-                          return <></>;
-                        } else {
                           return (
                             <div className="countDown flex items-center gap-4 justify-center">
                               <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
-                                {days}d
+                                {"00"}d
                               </div>
                               <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
-                                {hours}h
+                                {"00"}h
                               </div>
                               <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
-                                {minutes}m
+                                {"00"}m
                               </div>
                               <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
-                                {seconds}s
+                                {"00"}s
                               </div>
                             </div>
                           );
-                        }
                       }}
                     />
 
@@ -189,8 +185,9 @@ export default function BannerClaim() {
                             setClick(true);
                             handleClaim();
                           }}
+                          disabled={!isFetched}
                         >
-                          Claim
+                          { isFetched ? "Claim" : "Loading..." }
                         </button>
                         <div className="flex justify-center">
                           <button
