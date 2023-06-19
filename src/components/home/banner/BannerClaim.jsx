@@ -80,7 +80,7 @@ export default function BannerClaim() {
     }
   }, [address, isFetched]);
   return (
-    <div className=" w-full h-screen">
+    <div className=" w-full ">
       <div className="home-banner pt-[40px] w-full h-[90%] min-[1300px]:h-screen 2xl:h-[76%]">
         <div className="flex flex-col-reverse xl:flex-row items-center xl:items-end px-4 lg:px-[40px] xl:px-[80px] 2xl:px-[159px]">
           <div className="w-full flex justify-center xl:block">
@@ -164,25 +164,28 @@ export default function BannerClaim() {
                       MEXC and Uniswap.{" "}
                     </p>
                     {!address && (
-                      <button
-                        class="text-[14px] mb-4 rounded-[30px] bg-[#182B48] cursor-pointer h-[42px] w-[70%] text-white"
-                        onClick={() => {
-                          setOpen({
-                            open: true,
-                            component: <ConnectWalletClaim />,
-                          });
-                        }}
-                      >
-                        Connect Wallet
-                      </button>
+                      <>
+                        <button
+                          class="text-[14px] mb-4 rounded-[30px] bg-[#182B48] cursor-pointer h-[42px] w-[70%] text-white"
+                          onClick={() => {
+                            setOpen({
+                              open: true,
+                              component: <ConnectWalletClaim />,
+                            });
+                          }}
+                        >
+                          Connect Wallet
+                        </button>
+                      </>
                     )}
+
                     {address && (
                       <div>
                         <div className="text-[14px] text-white mt-3 mb-4 ">
                           Your claimed $AI = 0
                         </div>
                         <button
-                          class="text-[14px] mb-4 rounded-[30px] bg-[#182B48] cursor-pointer h-[42px] w-[70%] text-white"
+                          className="text-[14px] mb-4 rounded-[30px] bg-[#182B48] cursor-pointer h-[42px] w-[70%] text-white"
                           onClick={() => {
                             setClick(true);
                             handleClaim();
