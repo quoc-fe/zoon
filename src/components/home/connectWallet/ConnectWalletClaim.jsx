@@ -2,6 +2,7 @@ import { openModal } from "@/recoil/commonRecoilState";
 import { Connectors } from "@/utils/connector";
 import React, { useEffect } from "react";
 import { MdClose } from "react-icons/md";
+import { IoWalletOutline } from "react-icons/io5";
 import { useRecoilState } from "recoil";
 import { useAccount, useConnect, useDisconnect, useNetwork } from "wagmi";
 export default function ConnectWalletClaim() {
@@ -23,10 +24,12 @@ export default function ConnectWalletClaim() {
   };
   return (
     <div className="min-w-[320px] bg-white shadow-wallet border border-[rgb(231,227,235)] rounded-[32px] ">
-      <div className="relative flex items-center justify-between py-3 px-[24px]  border-b border-[rgb(231,227,235)]">
-        <h2 className="font-bold text-xl font-Extra">Connect by:</h2>
+      <div className="relative flex items-center justify-between py-3 px-[24px] ">
+        <h2 className="font-bold text-[1.125rem] text-[rgba(83,83,83)] w-full text-center">
+          Buy Now
+        </h2>
         <button
-          className="absolute top-0 right-0  -translate-y-[30%] translate-x-[20%] bg-white w-[40px] h-[40px] border border-[#ddd] rounded-full flex items-center justify-center"
+          className=" bg-white  flex items-center justify-center"
           onClick={() => {
             setOpen({ ...open, open: false });
           }}
@@ -34,9 +37,9 @@ export default function ConnectWalletClaim() {
           <MdClose className="text-2xl text-[#9c9c9c] " />
         </button>
       </div>
-      <div className="p-4 grid grid-cols-2 gap-2">
+      <div className="p-4 ">
         <button
-          className="flex flex-col items-center py-4 px-[24px] hover:bg-[#f1f1f1] border border-[#ddd] rounded-[12px] "
+          className="flex flex-row-reverse w-full justify-between  items-center py-3 px-4 hover:bg-[#c1c3c5] bg-[#F1F4F6] rounded-[16px]  transition-all duration-250"
           onClick={() => {
             setOpen({ ...open, open: false });
             handleConnect(Connectors[0]);
@@ -166,12 +169,12 @@ export default function ConnectWalletClaim() {
               fill="#F5841F"
             ></path>
           </svg>
-          <div font-size="14px" color="text" class="sc-gsnTZi kAJfza">
-            Metamask
+          <div className="font-medium text-[14px]  text-black font-default font-semibold">
+            MetaMask
           </div>
         </button>
         <button
-          className="flex flex-col items-center py-4 px-[24px] hover:bg-[#f1f1f1] border border-[#ddd] rounded-[12px]"
+          className="mt-4 flex flex-row-reverse w-full justify-between  items-center py-3 px-4 hover:bg-[#c1c3c5] bg-[#F1F4F6] rounded-[16px]  transition-all duration-250"
           onClick={() => {
             setOpen({ ...open, open: false });
             handleConnect(Connectors[0]);
@@ -189,10 +192,18 @@ export default function ConnectWalletClaim() {
               fill="#3389FB"
             ></path>
           </svg>
-          <div font-size="14px" color="text" class="sc-gsnTZi kAJfza">
+          <div className="font-medium text-[14px]  text-black font-default font-semibold">
             WalletConnect
           </div>
         </button>
+        <div className="text-center flex justify-center my-5">
+          <button type="button" className="group flex items-center gap-4 ">
+            <IoWalletOutline className="text-[#C7CED3] group-hover:text-[#535353] transition-all duration-300" />
+            <span className="inline-block text-[14px] text-[#C7CED3] group-hover:text-[#535353] transition-all duration-300">
+              I don't have a wallet
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );

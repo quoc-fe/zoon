@@ -3,7 +3,7 @@ import { Drawer } from "antd";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/logo_web.png";
 import { IoMdClose } from "react-icons/io";
 import { routerConstant } from "@/constants/routerConstant";
 import Link from "next/link";

@@ -24,6 +24,7 @@
     "metamask-react": "^2.6.0",
     "next": "13.0.6",
     "react": "18.2.0",
+    "react-countdown": "^2.3.5",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.40.0",
     "react-icons": "^4.9.0",
