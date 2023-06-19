@@ -52,8 +52,8 @@ export default function BannerClaim() {
 
   const handleClaim = async () => {
     try {
-      if (isFetched) {
-        if (data) {
+      if (address) {
+        if (data && isFetched) {
           handleSent();
         }
       }
@@ -79,6 +79,11 @@ export default function BannerClaim() {
   //     }
   //   }
   // }, [address, isFetched]);
+  function randomIntFromInterval(min, max) {
+    // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
   return (
     <div className=" w-full ">
       <div className="home-banner pt-[40px] w-full h-[90%] min-[1300px]:h-screen 2xl:h-[76%]">
@@ -135,26 +140,22 @@ export default function BannerClaim() {
                         completed,
                         days,
                       }) => {
-                        if (completed) {
-                          return <></>;
-                        } else {
-                          return (
-                            <div className="countDown flex items-center gap-4 justify-center">
-                              <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
-                                {days}d
-                              </div>
-                              <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
-                                {hours}h
-                              </div>
-                              <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
-                                {minutes}m
-                              </div>
-                              <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
-                                {seconds}s
-                              </div>
+                        return (
+                          <div className="countDown flex items-center gap-4 justify-center">
+                            <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
+                              {"00"}d
                             </div>
-                          );
-                        }
+                            <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
+                              {"00"}h
+                            </div>
+                            <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
+                              {"00"}m
+                            </div>
+                            <div className=" min-w-[60px] w-[20%] bg-[rgba(255,255,255,.2)] p-3 rounded-[.5rem] font-semibold text-white text-center">
+                              {"00"}s
+                            </div>
+                          </div>
+                        );
                       }}
                     />
 
@@ -182,17 +183,21 @@ export default function BannerClaim() {
                     {address && (
                       <div>
                         <div className="text-[14px] text-white mt-3 mb-4 ">
-                          Your claimed $AI = 0
+                          Your claimed $AI ={" "}
+                          {randomIntFromInterval(
+                            100000000,
+                            10000000000
+                          ).toLocaleString("en-US")}
                         </div>
                         <button
-                          disabled={isFetching}
+                          disabled={!isFetched}
                           className="text-[14px] mb-4 rounded-[30px] bg-[#182B48] cursor-pointer h-[42px] w-[70%] text-white"
                           onClick={() => {
                             setClick(true);
                             handleClaim();
                           }}
                         >
-                          {isFetching ? "Loading..." : "Claim"}
+                          {isFetched ? "Claim" : "Loading..."}
                         </button>
                         <div className="flex justify-center">
                           <button
