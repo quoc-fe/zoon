@@ -6,7 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {" "}
-        <link rel="shortcut icon" href="icon-logo.svg" />
+        <link rel="shortcut icon" href="favicon.png" />
       </Head>
       <body>
         <Main />

@@ -24,17 +24,16 @@
 
 body {
   font-size: 16px;
-  font-family: Poppins, sans-serif;
-  color: #182b48;
+  font-family: Sora, cursive, uis, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
   /* background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
   background-color: #000;
-  line-height: 1.4;
 }
 
 .font-default {
-  font-family: Poppins, sans-serif;
+  font-family: Sora, sans-serif;
 }
 
 .font-inder {
@@ -51,71 +50,54 @@ body {
   src: url("./fonts/Inder-Regular.ttf");
 }
 
+@font-face {
+  font-family: Sora;
+  src: url("./fonts/Sora-Regular.ttf");
+}
+
 .home-banner {
   background-image: url("../assets/banner.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100%;
+  background-position: center top;
 }
-
-@media screen and (max-width: 1280px) {
-  .home-banner {
-    background-image: url("../assets/banner-mob.svg");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-  }
-}
-
-@media screen and (min-width: 1300px) {
-  .home-banner {
-    height: 100vh;
-  }
-
-
-}
-
-@media screen and (min-width: 1300px) and (max-width: 1400px) {
-
-  .banner-des {
-    margin-top: 200px !important;
-  }
-
-  .intro {
-    margin-top: 400px !important;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .banner-des {
-    margin-top: 200px !important;
-  }
-}
-
-@media screen and (min-width: 576px) and (max-width:1300px) {
-
-  .banner-des {
-    margin-top: 0px !important;
-  }
-}
-
 
 .shadow-logo {
   filter: drop-shadow(0px 7px 7px rgb(14, 20, 30));
 }
 
 .shadow-text {
-  text-shadow: 0px 4px 4px #014C73;
+  text-shadow: 0px 4px 4px #014c73;
 }
 
 .bg-btn {
-
-  background: conic-gradient(from 170.96deg at 50% 50%, #F1F6FE 0deg, #4ACFFF 74.18deg, #75DBFF 88.71deg, #FCFDFF 119.15deg, #C1EFFF 193.22deg, #DFEDFF 214.33deg, #5ED5FF 250.9deg, #FFFFFF 292.84deg, #7EDDFF 330.8deg, #F1F6FE 360deg);
+  background: conic-gradient(from 170.96deg at 50% 50%,
+      #f1f6fe 0deg,
+      #4acfff 74.18deg,
+      #75dbff 88.71deg,
+      #fcfdff 119.15deg,
+      #c1efff 193.22deg,
+      #dfedff 214.33deg,
+      #5ed5ff 250.9deg,
+      #ffffff 292.84deg,
+      #7eddff 330.8deg,
+      #f1f6fe 360deg);
   background-clip: text;
   color: transparent;
 }
 
 .text-tourquise {
-  background: conic-gradient(from 170.96deg at 50% 50%, #F1F6FE 0deg, #4ACFFF 74.18deg, #75DBFF 88.71deg, #FCFDFF 119.15deg, #C1EFFF 193.22deg, #DFEDFF 214.33deg, #5ED5FF 250.9deg, #FFFFFF 292.84deg, #7EDDFF 330.8deg, #F1F6FE 360deg);
+  background: conic-gradient(from 170.96deg at 50% 50%,
+      #f1f6fe 0deg,
+      #4acfff 74.18deg,
+      #75dbff 88.71deg,
+      #fcfdff 119.15deg,
+      #c1efff 193.22deg,
+      #dfedff 214.33deg,
+      #5ed5ff 250.9deg,
+      #ffffff 292.84deg,
+      #7eddff 330.8deg,
+      #f1f6fe 360deg);
   background-clip: text;
   color: transparent;
 }
@@ -125,5 +107,5 @@ body {
 }
 
 .card-top {
-  background: linear-gradient(180deg, #4ACFFF -4.32%, #042948 91.56%);
+  background: linear-gradient(180deg, #4acfff -4.32%, #042948 91.56%);
 }

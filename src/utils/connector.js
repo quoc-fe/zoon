@@ -12,6 +12,7 @@ import { publicProvider } from "wagmi/providers/public";
 
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectLegacyConnector } from "wagmi/connectors/walletConnectLegacy";
+import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 import { configureChains } from "wagmi";
 export const defaultChains = [
   mainnet,
@@ -38,6 +39,11 @@ export const Connectors = [
     options: {
       infuraId: "41f4503b6a1943d9a10b757db68646d7",
       qrcode: true,
+      bridge: "https://bridge.walletconnect.org",
     },
+  }),
+  new CoinbaseWalletConnector({
+    chains,
+    options: { appName: "coinbase" },
   }),
 ];

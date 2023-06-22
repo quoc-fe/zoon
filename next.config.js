@@ -33,7 +33,11 @@ const nextConfig = {
   //   localeDetection: true,
   // },
   images: {
-    domains: ["buy1.bigeyes.space", "claim.bigeyes.space"],
+    domains: [
+      "buy1.bigeyes.space",
+      "claim.bigeyes.space",
+      "zoon-games.s3.us-west-1.amazonaws.com",
+    ],
   },
 };
 

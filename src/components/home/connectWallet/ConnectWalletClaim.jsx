@@ -4,7 +4,9 @@ import React, { useEffect } from "react";
 import { MdClose } from "react-icons/md";
 import { IoWalletOutline } from "react-icons/io5";
 import { useRecoilState } from "recoil";
+import iconCoinBase from "../../../assets/coinbase.png";
 import { useAccount, useConnect, useDisconnect, useNetwork } from "wagmi";
+import Image from "next/image";
 export default function ConnectWalletClaim() {
   const { connector: activeConnector, isConnected, address } = useAccount();
   const { disconnectAsync } = useDisconnect();
@@ -23,13 +25,11 @@ export default function ConnectWalletClaim() {
     }
   };
   return (
-    <div className="min-w-[320px] bg-white shadow-wallet border border-[rgb(231,227,235)] rounded-[32px] ">
+    <div className="min-w-[400px] bg-[rgba(49,49,49,1)] shadow-wallet  rounded-[16px] ">
       <div className="relative flex items-center justify-between py-3 px-[24px] ">
-        <h2 className="font-bold text-[1.125rem] text-[rgba(83,83,83)] w-full text-center">
-          Buy Now
-        </h2>
+        <h2 className="font-bold text-[1.125rem]  w-full ">Connect wallet</h2>
         <button
-          className=" bg-white  flex items-center justify-center"
+          className=" cursor-pointer flex items-center justify-center"
           onClick={() => {
             setOpen({ ...open, open: false });
           }}
@@ -39,7 +39,7 @@ export default function ConnectWalletClaim() {
       </div>
       <div className="p-4 ">
         <button
-          className="flex flex-row-reverse w-full justify-between  items-center py-3 px-4 hover:bg-[#c1c3c5] bg-[#F1F4F6] rounded-[16px]  transition-all duration-250"
+          className="flex flex-row-reverse w-full justify-between hover:bg-[rgb(244,104,24)] items-center h-[56px] px-6 bg-[rgb(73,73,73)] rounded-[16px]  transition-all duration-250"
           onClick={() => {
             setOpen({ ...open, open: false });
             handleConnect(Connectors[0]);
@@ -169,15 +169,13 @@ export default function ConnectWalletClaim() {
               fill="#F5841F"
             ></path>
           </svg>
-          <div className="font-medium text-[14px]  text-black font-default font-semibold">
-            MetaMask
-          </div>
+          <div className="   font-default font-semibold">MetaMask</div>
         </button>
         <button
-          className="mt-4 flex flex-row-reverse w-full justify-between  items-center py-3 px-4 hover:bg-[#c1c3c5] bg-[#F1F4F6] rounded-[16px]  transition-all duration-250"
+          className="mt-4 flex flex-row-reverse w-full justify-between  items-center h-[56px] px-6 hover:bg-[rgb(244,104,24)] bg-[rgb(73,73,73)] rounded-[16px]  transition-all duration-250"
           onClick={() => {
             setOpen({ ...open, open: false });
-            handleConnect(Connectors[0]);
+            handleConnect(Connectors[1]);
           }}
         >
           <svg
@@ -192,16 +190,26 @@ export default function ConnectWalletClaim() {
               fill="#3389FB"
             ></path>
           </svg>
-          <div className="font-medium text-[14px]  text-black font-default font-semibold">
-            WalletConnect
-          </div>
+          <div className="  font-default font-semibold">WalletConnect</div>
         </button>
-        <div className="text-center flex justify-center my-5">
-          <button type="button" className="group flex items-center gap-4 ">
-            <IoWalletOutline className="text-[#C7CED3] group-hover:text-[#535353] transition-all duration-300" />
-            <span className="inline-block text-[14px] text-[#C7CED3] group-hover:text-[#535353] transition-all duration-300">
-              I don't have a wallet
-            </span>
+        <button
+          className="mt-4 flex flex-row-reverse w-full justify-between  items-center h-[56px] px-6 hover:bg-[rgb(244,104,24)] bg-[rgb(73,73,73)] rounded-[16px]  transition-all duration-250"
+          onClick={() => {
+            setOpen({ ...open, open: false });
+            handleConnect(Connectors[2]);
+          }}
+        >
+          <Image src={iconCoinBase} width={30} height={30} alt="" />
+          <div className="  font-default font-semibold">CoinBase</div>
+        </button>
+        <div className=" mt-[32px]">
+          <button
+            className="text-white font-semibold py-1 px-[23px] h-[42px] w-[35%]  bg-[rgb(73,73,73)] rounded-[8px]  transition-all duration-250"
+            onClick={() => {
+              setOpen({ ...open, open: false });
+            }}
+          >
+            Close
           </button>
         </div>
       </div>
